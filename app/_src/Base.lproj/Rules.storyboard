@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kzf-Dd-GLo">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8191"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Rules-->
+        <scene sceneID="Ezd-S9-5G8">
+            <objects>
+                <tableViewController id="kzf-Dd-GLo" customClass="RulesViewController" customModule="MC_CC" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="GoW-1Q-hsV" userLabel="rules tableview">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="rule_cell_identifier" rowHeight="66" id="VLz-cK-eBv" userLabel="rule cell" customClass="RuleTableViewCell" customModule="MC_CC" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="66"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VLz-cK-eBv" id="1ss-PB-Blt">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="65.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="1." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfK-eg-Yck" userLabel="index label">
+                                            <rect key="frame" x="16" y="18" width="12.5" height="29.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iNs-ah-BkO" userLabel="rule label">
+                                            <rect key="frame" x="36" y="18" width="547.5" height="29.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="cfK-eg-Yck" firstAttribute="leading" secondItem="1ss-PB-Blt" secondAttribute="leadingMargin" constant="8" id="8gA-6u-Rds"/>
+                                        <constraint firstItem="iNs-ah-BkO" firstAttribute="bottom" secondItem="cfK-eg-Yck" secondAttribute="bottom" id="H5t-SS-nOL"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="iNs-ah-BkO" secondAttribute="bottom" constant="10" id="KEM-Jw-0eh"/>
+                                        <constraint firstItem="iNs-ah-BkO" firstAttribute="top" secondItem="1ss-PB-Blt" secondAttribute="topMargin" constant="10" id="RMN-1z-6ht"/>
+                                        <constraint firstItem="iNs-ah-BkO" firstAttribute="top" secondItem="cfK-eg-Yck" secondAttribute="top" id="TLC-rE-QCe"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="iNs-ah-BkO" secondAttribute="trailing" constant="8" id="gqx-3D-M59"/>
+                                        <constraint firstItem="cfK-eg-Yck" firstAttribute="centerY" secondItem="1ss-PB-Blt" secondAttribute="centerY" id="laG-70-hPq"/>
+                                        <constraint firstItem="iNs-ah-BkO" firstAttribute="leading" secondItem="cfK-eg-Yck" secondAttribute="trailing" constant="8" id="wnU-QV-zyM"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="indexLabel" destination="cfK-eg-Yck" id="OyI-gF-Kf2"/>
+                                    <outlet property="ruleLabel" destination="iNs-ah-BkO" id="zp0-1X-25L"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="kzf-Dd-GLo" id="5g0-bk-Aek"/>
+                            <outlet property="delegate" destination="kzf-Dd-GLo" id="MQr-AG-Sdj"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Rules" prompt="How to Play" id="BwN-31-NbH"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="htG-hG-NB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2588" y="149"/>
+        </scene>
+    </scenes>
+</document>

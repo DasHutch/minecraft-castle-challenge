@@ -1,0 +1,684 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		17159B731BAF45F600E71174 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17159B721BAF45F600E71174 /* RulesViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		17159B751BAF48FB00E71174 /* RuleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17159B741BAF48FB00E71174 /* RuleTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		171B077B1B92642500217266 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171B077A1B92642500217266 /* AppDelegate.swift */; };
+		171B07821B92642500217266 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 171B07811B92642500217266 /* Assets.xcassets */; };
+		171B07851B92642500217266 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 171B07831B92642500217266 /* LaunchScreen.storyboard */; };
+		171B07901B92642600217266 /* MC_Castle_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171B078F1B92642600217266 /* MC_Castle_ChallengeTests.swift */; };
+		171B079B1B92642600217266 /* MC_Castle_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171B079A1B92642600217266 /* MC_Castle_ChallengeUITests.swift */; };
+		171B07A91B926B3000217266 /* ChallengeRulesAndStages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171B07A81B926B3000217266 /* ChallengeRulesAndStages.swift */; };
+		171B07AB1B926C1800217266 /* SegueIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171B07AA1B926C1800217266 /* SegueIdentifiers.swift */; };
+		1764B1E41BAB32A1008061A6 /* RequirementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1764B1E31BAB32A1008061A6 /* RequirementTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		1764C3881BA09AE400D2A2AC /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1764C3871BA09AE400D2A2AC /* FileManager.swift */; settings = {ASSET_TAGS = (); }; };
+		177C71D91BA3F27100720577 /* CastleChallenge.plist in Resources */ = {isa = PBXBuildFile; fileRef = 177C71D81BA3F27100720577 /* CastleChallenge.plist */; settings = {ASSET_TAGS = (); }; };
+		177C71E41BA5001400720577 /* HowToPlay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 177C71E21BA5001400720577 /* HowToPlay.storyboard */; settings = {ASSET_TAGS = (); }; };
+		177C71E71BA5002600720577 /* Rules.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 177C71E51BA5002600720577 /* Rules.storyboard */; settings = {ASSET_TAGS = (); }; };
+		177C71EA1BA5017600720577 /* Age.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 177C71E81BA5017600720577 /* Age.storyboard */; settings = {ASSET_TAGS = (); }; };
+		177C71ED1BA5034300720577 /* AgeRequirements.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 177C71EB1BA5034300720577 /* AgeRequirements.storyboard */; settings = {ASSET_TAGS = (); }; };
+		177C71F21BA5F1A900720577 /* UIViewController+ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177C71F11BA5F1A900720577 /* UIViewController+ContentViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		177C71F51BA60A3800720577 /* CastleChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177C71F41BA60A3800720577 /* CastleChallenge.swift */; settings = {ASSET_TAGS = (); }; };
+		1798CFE41B93B524008B64D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 171B077E1B92642500217266 /* Main.storyboard */; };
+		17B367271B93E2F100FFD061 /* AgeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B367261B93E2F100FFD061 /* AgeDetailsViewController.swift */; };
+		17B367311B93E77500FFD061 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B367301B93E77500FFD061 /* UserDefaults.swift */; };
+		17B367331B93E79F00FFD061 /* XCGLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B367321B93E79F00FFD061 /* XCGLogger.swift */; };
+		17B9575A1B955810003334DB /* AgeDetailsRequirementsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B957591B955810003334DB /* AgeDetailsRequirementsTableViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		171B078C1B92642600217266 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 171B076F1B92642500217266 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 171B07761B92642500217266;
+			remoteInfo = "MC Castle Challenge";
+		};
+		171B07971B92642600217266 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 171B076F1B92642500217266 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 171B07761B92642500217266;
+			remoteInfo = "MC Castle Challenge";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		17159B721BAF45F600E71174 /* RulesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
+		17159B741BAF48FB00E71174 /* RuleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuleTableViewCell.swift; sourceTree = "<group>"; };
+		171B07771B92642500217266 /* MC CC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MC CC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		171B077A1B92642500217266 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		171B077F1B92642500217266 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		171B07811B92642500217266 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		171B07841B92642500217266 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		171B07861B92642500217266 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		171B078B1B92642600217266 /* unit tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "unit tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		171B078F1B92642600217266 /* MC_Castle_ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC_Castle_ChallengeTests.swift; sourceTree = "<group>"; };
+		171B07911B92642600217266 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		171B07961B92642600217266 /* ui tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ui tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		171B079A1B92642600217266 /* MC_Castle_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC_Castle_ChallengeUITests.swift; sourceTree = "<group>"; };
+		171B079C1B92642600217266 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		171B07A81B926B3000217266 /* ChallengeRulesAndStages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeRulesAndStages.swift; sourceTree = "<group>"; };
+		171B07AA1B926C1800217266 /* SegueIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueIdentifiers.swift; sourceTree = "<group>"; };
+		1764B1E31BAB32A1008061A6 /* RequirementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequirementTableViewCell.swift; sourceTree = "<group>"; };
+		1764C3871BA09AE400D2A2AC /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		177C71D81BA3F27100720577 /* CastleChallenge.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CastleChallenge.plist; sourceTree = "<group>"; };
+		177C71E31BA5001400720577 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HowToPlay.storyboard; sourceTree = "<group>"; };
+		177C71E61BA5002600720577 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Rules.storyboard; sourceTree = "<group>"; };
+		177C71E91BA5017600720577 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Age.storyboard; sourceTree = "<group>"; };
+		177C71EC1BA5034300720577 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AgeRequirements.storyboard; sourceTree = "<group>"; };
+		177C71F11BA5F1A900720577 /* UIViewController+ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ContentViewController.swift"; sourceTree = "<group>"; };
+		177C71F41BA60A3800720577 /* CastleChallenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastleChallenge.swift; sourceTree = "<group>"; };
+		17B367261B93E2F100FFD061 /* AgeDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeDetailsViewController.swift; sourceTree = "<group>"; };
+		17B367301B93E77500FFD061 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		17B367321B93E79F00FFD061 /* XCGLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCGLogger.swift; sourceTree = "<group>"; };
+		17B957591B955810003334DB /* AgeDetailsRequirementsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeDetailsRequirementsTableViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		171B07741B92642500217266 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		171B07881B92642600217266 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		171B07931B92642600217266 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		17159B711BAF45D200E71174 /* rules */ = {
+			isa = PBXGroup;
+			children = (
+				17159B721BAF45F600E71174 /* RulesViewController.swift */,
+				17159B741BAF48FB00E71174 /* RuleTableViewCell.swift */,
+			);
+			name = rules;
+			sourceTree = "<group>";
+		};
+		171B076E1B92642500217266 = {
+			isa = PBXGroup;
+			children = (
+				171B07791B92642500217266 /* _src */,
+				171B078E1B92642600217266 /* unit tests */,
+				171B07991B92642600217266 /* ui tests */,
+				171B07781B92642500217266 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		171B07781B92642500217266 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				171B07771B92642500217266 /* MC CC.app */,
+				171B078B1B92642600217266 /* unit tests.xctest */,
+				171B07961B92642600217266 /* ui tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		171B07791B92642500217266 /* _src */ = {
+			isa = PBXGroup;
+			children = (
+				177C71EF1BA50A8700720577 /* application */,
+				177C71F31BA60A1200720577 /* models */,
+				177C71F01BA50AA800720577 /* challenge-rules-objective */,
+				177C71EE1BA50A7400720577 /* age */,
+				17159B711BAF45D200E71174 /* rules */,
+				174227FD1B93B90E00EE35AA /* other-sources */,
+				174227FC1B93B8FF00EE35AA /* resources */,
+				174227FB1B93B8F300EE35AA /* storyboards */,
+				1764C3861BA09A8800D2A2AC /* _vendor */,
+			);
+			path = _src;
+			sourceTree = "<group>";
+		};
+		171B078E1B92642600217266 /* unit tests */ = {
+			isa = PBXGroup;
+			children = (
+				171B078F1B92642600217266 /* MC_Castle_ChallengeTests.swift */,
+				171B07911B92642600217266 /* Info.plist */,
+			);
+			path = "unit tests";
+			sourceTree = "<group>";
+		};
+		171B07991B92642600217266 /* ui tests */ = {
+			isa = PBXGroup;
+			children = (
+				171B079A1B92642600217266 /* MC_Castle_ChallengeUITests.swift */,
+				171B079C1B92642600217266 /* Info.plist */,
+			);
+			path = "ui tests";
+			sourceTree = "<group>";
+		};
+		174227FB1B93B8F300EE35AA /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				171B07831B92642500217266 /* LaunchScreen.storyboard */,
+				171B077E1B92642500217266 /* Main.storyboard */,
+				177C71E81BA5017600720577 /* Age.storyboard */,
+				177C71EB1BA5034300720577 /* AgeRequirements.storyboard */,
+				177C71E51BA5002600720577 /* Rules.storyboard */,
+				177C71E21BA5001400720577 /* HowToPlay.storyboard */,
+			);
+			name = storyboards;
+			sourceTree = "<group>";
+		};
+		174227FC1B93B8FF00EE35AA /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				171B07811B92642500217266 /* Assets.xcassets */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
+		174227FD1B93B90E00EE35AA /* other-sources */ = {
+			isa = PBXGroup;
+			children = (
+				171B07861B92642500217266 /* Info.plist */,
+				177C71D81BA3F27100720577 /* CastleChallenge.plist */,
+			);
+			name = "other-sources";
+			sourceTree = "<group>";
+		};
+		1764C3861BA09A8800D2A2AC /* _vendor */ = {
+			isa = PBXGroup;
+			children = (
+				17B367321B93E79F00FFD061 /* XCGLogger.swift */,
+			);
+			name = _vendor;
+			sourceTree = "<group>";
+		};
+		177C71EE1BA50A7400720577 /* age */ = {
+			isa = PBXGroup;
+			children = (
+				17B367261B93E2F100FFD061 /* AgeDetailsViewController.swift */,
+				17B957591B955810003334DB /* AgeDetailsRequirementsTableViewController.swift */,
+				1764B1E31BAB32A1008061A6 /* RequirementTableViewCell.swift */,
+			);
+			name = age;
+			sourceTree = "<group>";
+		};
+		177C71EF1BA50A8700720577 /* application */ = {
+			isa = PBXGroup;
+			children = (
+				171B077A1B92642500217266 /* AppDelegate.swift */,
+				1764C3871BA09AE400D2A2AC /* FileManager.swift */,
+				17B367301B93E77500FFD061 /* UserDefaults.swift */,
+				171B07AA1B926C1800217266 /* SegueIdentifiers.swift */,
+				177C71F11BA5F1A900720577 /* UIViewController+ContentViewController.swift */,
+			);
+			name = application;
+			sourceTree = "<group>";
+		};
+		177C71F01BA50AA800720577 /* challenge-rules-objective */ = {
+			isa = PBXGroup;
+			children = (
+				171B07A81B926B3000217266 /* ChallengeRulesAndStages.swift */,
+			);
+			name = "challenge-rules-objective";
+			sourceTree = "<group>";
+		};
+		177C71F31BA60A1200720577 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				177C71F41BA60A3800720577 /* CastleChallenge.swift */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		171B07761B92642500217266 /* MC CC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 171B079F1B92642600217266 /* Build configuration list for PBXNativeTarget "MC CC" */;
+			buildPhases = (
+				171B07731B92642500217266 /* Sources */,
+				171B07741B92642500217266 /* Frameworks */,
+				171B07751B92642500217266 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MC CC";
+			productName = "MC Castle Challenge";
+			productReference = 171B07771B92642500217266 /* MC CC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		171B078A1B92642600217266 /* unit tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 171B07A21B92642600217266 /* Build configuration list for PBXNativeTarget "unit tests" */;
+			buildPhases = (
+				171B07871B92642600217266 /* Sources */,
+				171B07881B92642600217266 /* Frameworks */,
+				171B07891B92642600217266 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				171B078D1B92642600217266 /* PBXTargetDependency */,
+			);
+			name = "unit tests";
+			productName = "MC Castle ChallengeTests";
+			productReference = 171B078B1B92642600217266 /* unit tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		171B07951B92642600217266 /* ui tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 171B07A51B92642600217266 /* Build configuration list for PBXNativeTarget "ui tests" */;
+			buildPhases = (
+				171B07921B92642600217266 /* Sources */,
+				171B07931B92642600217266 /* Frameworks */,
+				171B07941B92642600217266 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				171B07981B92642600217266 /* PBXTargetDependency */,
+			);
+			name = "ui tests";
+			productName = "MC Castle ChallengeUITests";
+			productReference = 171B07961B92642600217266 /* ui tests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		171B076F1B92642500217266 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Gregory Hutchinson";
+				TargetAttributes = {
+					171B07761B92642500217266 = {
+						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = WPZ6H96R6K;
+					};
+					171B078A1B92642600217266 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 171B07761B92642500217266;
+					};
+					171B07951B92642600217266 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 171B07761B92642500217266;
+					};
+				};
+			};
+			buildConfigurationList = 171B07721B92642500217266 /* Build configuration list for PBXProject "MC Castle Challenge" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 171B076E1B92642500217266;
+			productRefGroup = 171B07781B92642500217266 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				171B07761B92642500217266 /* MC CC */,
+				171B078A1B92642600217266 /* unit tests */,
+				171B07951B92642600217266 /* ui tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		171B07751B92642500217266 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				177C71E71BA5002600720577 /* Rules.storyboard in Resources */,
+				177C71D91BA3F27100720577 /* CastleChallenge.plist in Resources */,
+				1798CFE41B93B524008B64D0 /* Main.storyboard in Resources */,
+				177C71E41BA5001400720577 /* HowToPlay.storyboard in Resources */,
+				177C71EA1BA5017600720577 /* Age.storyboard in Resources */,
+				171B07851B92642500217266 /* LaunchScreen.storyboard in Resources */,
+				171B07821B92642500217266 /* Assets.xcassets in Resources */,
+				177C71ED1BA5034300720577 /* AgeRequirements.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		171B07891B92642600217266 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		171B07941B92642600217266 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		171B07731B92642500217266 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				171B07AB1B926C1800217266 /* SegueIdentifiers.swift in Sources */,
+				1764B1E41BAB32A1008061A6 /* RequirementTableViewCell.swift in Sources */,
+				171B07A91B926B3000217266 /* ChallengeRulesAndStages.swift in Sources */,
+				1764C3881BA09AE400D2A2AC /* FileManager.swift in Sources */,
+				17B367311B93E77500FFD061 /* UserDefaults.swift in Sources */,
+				17B367331B93E79F00FFD061 /* XCGLogger.swift in Sources */,
+				171B077B1B92642500217266 /* AppDelegate.swift in Sources */,
+				17B9575A1B955810003334DB /* AgeDetailsRequirementsTableViewController.swift in Sources */,
+				177C71F51BA60A3800720577 /* CastleChallenge.swift in Sources */,
+				177C71F21BA5F1A900720577 /* UIViewController+ContentViewController.swift in Sources */,
+				17159B731BAF45F600E71174 /* RulesViewController.swift in Sources */,
+				17159B751BAF48FB00E71174 /* RuleTableViewCell.swift in Sources */,
+				17B367271B93E2F100FFD061 /* AgeDetailsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		171B07871B92642600217266 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				171B07901B92642600217266 /* MC_Castle_ChallengeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		171B07921B92642600217266 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				171B079B1B92642600217266 /* MC_Castle_ChallengeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		171B078D1B92642600217266 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 171B07761B92642500217266 /* MC CC */;
+			targetProxy = 171B078C1B92642600217266 /* PBXContainerItemProxy */;
+		};
+		171B07981B92642600217266 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 171B07761B92642500217266 /* MC CC */;
+			targetProxy = 171B07971B92642600217266 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		171B077E1B92642500217266 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				171B077F1B92642500217266 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		171B07831B92642500217266 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				171B07841B92642500217266 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		177C71E21BA5001400720577 /* HowToPlay.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				177C71E31BA5001400720577 /* Base */,
+			);
+			name = HowToPlay.storyboard;
+			sourceTree = "<group>";
+		};
+		177C71E51BA5002600720577 /* Rules.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				177C71E61BA5002600720577 /* Base */,
+			);
+			name = Rules.storyboard;
+			sourceTree = "<group>";
+		};
+		177C71E81BA5017600720577 /* Age.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				177C71E91BA5017600720577 /* Base */,
+			);
+			name = Age.storyboard;
+			sourceTree = "<group>";
+		};
+		177C71EB1BA5034300720577 /* AgeRequirements.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				177C71EC1BA5034300720577 /* Base */,
+			);
+			name = AgeRequirements.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		171B079D1B92642600217266 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		171B079E1B92642600217266 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		171B07A01B92642600217266 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "$(SRCROOT)/_src/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dashutchdevelopment.mc.castle.challenege;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		171B07A11B92642600217266 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "$(SRCROOT)/_src/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dashutchdevelopment.mc.castle.challenege;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		171B07A31B92642600217266 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "MC Castle ChallengeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dashutchdevelopment.MC-Castle-ChallengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MC Castle Challenge.app/MC Castle Challenge";
+			};
+			name = Debug;
+		};
+		171B07A41B92642600217266 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "MC Castle ChallengeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dashutchdevelopment.MC-Castle-ChallengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MC Castle Challenge.app/MC Castle Challenge";
+			};
+			name = Release;
+		};
+		171B07A61B92642600217266 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "MC Castle ChallengeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dashutchdevelopment.MC-Castle-ChallengeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "MC Castle Challenge";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		171B07A71B92642600217266 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "MC Castle ChallengeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dashutchdevelopment.MC-Castle-ChallengeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "MC Castle Challenge";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		171B07721B92642500217266 /* Build configuration list for PBXProject "MC Castle Challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				171B079D1B92642600217266 /* Debug */,
+				171B079E1B92642600217266 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		171B079F1B92642600217266 /* Build configuration list for PBXNativeTarget "MC CC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				171B07A01B92642600217266 /* Debug */,
+				171B07A11B92642600217266 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		171B07A21B92642600217266 /* Build configuration list for PBXNativeTarget "unit tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				171B07A31B92642600217266 /* Debug */,
+				171B07A41B92642600217266 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		171B07A51B92642600217266 /* Build configuration list for PBXNativeTarget "ui tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				171B07A61B92642600217266 /* Debug */,
+				171B07A71B92642600217266 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 171B076F1B92642500217266 /* Project object */;
+}

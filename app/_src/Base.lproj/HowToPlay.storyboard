@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pxr-rO-kzr">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Objective & Plot-->
+        <scene sceneID="3kR-4Y-8q6">
+            <objects>
+                <viewController id="pxr-rO-kzr" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RUV-5T-2kC"/>
+                        <viewControllerLayoutGuide type="bottom" id="RvT-8C-l2V"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vNN-co-0Sd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="751" text="Objective:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cQk-Wh-Y3h">
+                                <rect key="frame" x="20" y="28" width="95" height="25.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" text="Plot:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fkH-fv-Ois">
+                                <rect key="frame" x="20" y="97" width="95" height="25.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oYp-kH-y9q">
+                                <rect key="frame" x="123" y="28" width="457" height="61.5"/>
+                                <string key="text">Starting with nothing but your hands and will, progress through various stages to construct the ultimate stronghold to defend your spawn point!</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MFn-l6-XBf">
+                                <rect key="frame" x="20" y="553" width="560" height="26.5"/>
+                                <string key="text">Plan ahead! Your castle is going to become larger as you go along, so make sure that you leave yourself room to expand. It might also be helpful to sketch out your castle in advance.</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="313" width="360" height="67"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="254" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Bm-ln-7cF">
+                                <rect key="frame" x="123" y="97" width="457" height="229.5"/>
+                                <string key="text">You awaken in a strange and wonderful land with no memory of how you got there. You realize that the place you first opened your eyes has some sort of mystical power, power strong enough to draw you back to it whenever you are at the gates of death. Though you do not understand the power of that one special spot, you decide to protect it and honor it as hallowed ground for all the times it has saved you from being lost forever to the void. And so, with only the strength of your hands and the sense of purpose in your heart, you set out to construct the ultimate fortification around your spawn and thus create the heart of your future empire.</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7Bm-ln-7cF" firstAttribute="top" secondItem="fkH-fv-Ois" secondAttribute="top" id="1Ex-dY-hcC"/>
+                            <constraint firstItem="oYp-kH-y9q" firstAttribute="top" secondItem="cQk-Wh-Y3h" secondAttribute="bottom" constant="8" id="1Fg-Qa-rzo"/>
+                            <constraint firstItem="MFn-l6-XBf" firstAttribute="trailing" secondItem="vNN-co-0Sd" secondAttribute="trailingMargin" id="3VU-iD-5Mb"/>
+                            <constraint firstItem="fkH-fv-Ois" firstAttribute="leading" secondItem="vNN-co-0Sd" secondAttribute="leadingMargin" id="4GD-7w-wKU"/>
+                            <constraint firstItem="7Bm-ln-7cF" firstAttribute="trailing" secondItem="vNN-co-0Sd" secondAttribute="trailingMargin" id="9Wc-p5-YTt"/>
+                            <constraint firstItem="cQk-Wh-Y3h" firstAttribute="leading" secondItem="vNN-co-0Sd" secondAttribute="leadingMargin" id="ABV-hI-WFg"/>
+                            <constraint firstItem="fkH-fv-Ois" firstAttribute="top" secondItem="oYp-kH-y9q" secondAttribute="bottom" constant="8" id="C9z-lF-TPU"/>
+                            <constraint firstItem="cQk-Wh-Y3h" firstAttribute="top" secondItem="RUV-5T-2kC" secondAttribute="bottom" constant="8" id="F6e-YY-I63"/>
+                            <constraint firstItem="cQk-Wh-Y3h" firstAttribute="top" secondItem="RUV-5T-2kC" secondAttribute="bottom" constant="8" id="FUn-4B-2bj"/>
+                            <constraint firstItem="MFn-l6-XBf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7Bm-ln-7cF" secondAttribute="bottom" constant="8" id="GlF-VW-qJr"/>
+                            <constraint firstItem="oYp-kH-y9q" firstAttribute="trailing" secondItem="vNN-co-0Sd" secondAttribute="trailingMargin" id="IN8-lO-dzk"/>
+                            <constraint firstItem="oYp-kH-y9q" firstAttribute="leading" secondItem="cQk-Wh-Y3h" secondAttribute="trailing" constant="8" id="J79-Xx-1cH"/>
+                            <constraint firstItem="7Bm-ln-7cF" firstAttribute="leading" secondItem="vNN-co-0Sd" secondAttribute="leadingMargin" id="MCR-hf-Ynd"/>
+                            <constraint firstItem="cQk-Wh-Y3h" firstAttribute="trailing" secondItem="vNN-co-0Sd" secondAttribute="trailingMargin" id="PSU-f8-git"/>
+                            <constraint firstItem="RvT-8C-l2V" firstAttribute="top" secondItem="MFn-l6-XBf" secondAttribute="bottom" constant="20" id="SgQ-p2-x7I"/>
+                            <constraint firstItem="cQk-Wh-Y3h" firstAttribute="leading" secondItem="vNN-co-0Sd" secondAttribute="leadingMargin" id="cMa-31-mEI"/>
+                            <constraint firstItem="7Bm-ln-7cF" firstAttribute="trailing" secondItem="oYp-kH-y9q" secondAttribute="trailing" id="fSd-un-kcV"/>
+                            <constraint firstItem="7Bm-ln-7cF" firstAttribute="top" secondItem="oYp-kH-y9q" secondAttribute="bottom" constant="8" id="fTG-0H-AJS"/>
+                            <constraint firstItem="fkH-fv-Ois" firstAttribute="leading" secondItem="vNN-co-0Sd" secondAttribute="leadingMargin" id="hCg-OI-D6R"/>
+                            <constraint firstItem="fkH-fv-Ois" firstAttribute="trailing" secondItem="vNN-co-0Sd" secondAttribute="trailingMargin" id="hEu-fY-rXP"/>
+                            <constraint firstItem="oYp-kH-y9q" firstAttribute="top" secondItem="cQk-Wh-Y3h" secondAttribute="top" id="hqD-HQ-FPk"/>
+                            <constraint firstItem="7Bm-ln-7cF" firstAttribute="leading" secondItem="oYp-kH-y9q" secondAttribute="leading" id="hzx-b3-fOo"/>
+                            <constraint firstItem="7Bm-ln-7cF" firstAttribute="top" secondItem="fkH-fv-Ois" secondAttribute="bottom" constant="8" id="iis-Lh-zqJ"/>
+                            <constraint firstItem="oYp-kH-y9q" firstAttribute="leading" secondItem="vNN-co-0Sd" secondAttribute="leadingMargin" id="mel-a4-XJc"/>
+                            <constraint firstItem="oYp-kH-y9q" firstAttribute="trailing" secondItem="vNN-co-0Sd" secondAttribute="trailingMargin" id="s6Z-IH-Okg"/>
+                            <constraint firstItem="MFn-l6-XBf" firstAttribute="leading" secondItem="vNN-co-0Sd" secondAttribute="leadingMargin" id="sCF-G0-Cgi"/>
+                            <constraint firstItem="7Bm-ln-7cF" firstAttribute="leading" secondItem="fkH-fv-Ois" secondAttribute="trailing" constant="8" symbolic="YES" id="zMn-oK-xoR"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="FUn-4B-2bj"/>
+                                <exclude reference="PSU-f8-git"/>
+                                <exclude reference="cMa-31-mEI"/>
+                                <exclude reference="1Fg-Qa-rzo"/>
+                                <exclude reference="mel-a4-XJc"/>
+                                <exclude reference="s6Z-IH-Okg"/>
+                                <exclude reference="4GD-7w-wKU"/>
+                                <exclude reference="C9z-lF-TPU"/>
+                                <exclude reference="hEu-fY-rXP"/>
+                                <exclude reference="9Wc-p5-YTt"/>
+                                <exclude reference="MCR-hf-Ynd"/>
+                                <exclude reference="iis-Lh-zqJ"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="ABV-hI-WFg"/>
+                                <exclude reference="F6e-YY-I63"/>
+                                <include reference="FUn-4B-2bj"/>
+                                <include reference="PSU-f8-git"/>
+                                <include reference="cMa-31-mEI"/>
+                                <include reference="1Fg-Qa-rzo"/>
+                                <exclude reference="IN8-lO-dzk"/>
+                                <exclude reference="J79-Xx-1cH"/>
+                                <exclude reference="hqD-HQ-FPk"/>
+                                <include reference="mel-a4-XJc"/>
+                                <include reference="s6Z-IH-Okg"/>
+                                <include reference="4GD-7w-wKU"/>
+                                <include reference="C9z-lF-TPU"/>
+                                <exclude reference="hCg-OI-D6R"/>
+                                <include reference="hEu-fY-rXP"/>
+                                <exclude reference="1Ex-dY-hcC"/>
+                                <include reference="9Wc-p5-YTt"/>
+                                <include reference="MCR-hf-Ynd"/>
+                                <exclude reference="fSd-un-kcV"/>
+                                <exclude reference="fTG-0H-AJS"/>
+                                <exclude reference="hzx-b3-fOo"/>
+                                <include reference="iis-Lh-zqJ"/>
+                                <exclude reference="zMn-oK-xoR"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Objective &amp; Plot" prompt="How to Play" id="ycw-m8-6jA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="90y-d6-pKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1917" y="-508"/>
+        </scene>
+    </scenes>
+</document>

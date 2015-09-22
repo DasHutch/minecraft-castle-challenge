@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="StA-C7-gJe">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Age Details View Controller-->
+        <scene sceneID="Myd-ac-018">
+            <objects>
+                <viewController id="StA-C7-gJe" customClass="AgeDetailsViewController" customModule="MC_CC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wmw-Ve-oRi"/>
+                        <viewControllerLayoutGuide type="bottom" id="TX2-dB-vgx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2nH-Yu-VGH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="General Requirements:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QBI-5d-Sm0">
+                                <rect key="frame" x="20" y="72" width="560" height="25.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yEW-jt-xMi">
+                                <rect key="frame" x="20" y="105" width="560" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="Xqg-da-o18"/>
+                                </constraints>
+                                <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="A70-aa-hmW" userLabel="requirements selector">
+                                <rect key="frame" x="20" y="273" width="560" height="29"/>
+                                <segments>
+                                    <segment title="Construction"/>
+                                    <segment title="Materials"/>
+                                    <segment title="Treasure"/>
+                                </segments>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="20" y="375" width="360" height="18.5"/>
+                                </variation>
+                                <connections>
+                                    <action selector="changeChecklist:" destination="StA-C7-gJe" eventType="valueChanged" id="RF0-Xd-cn4"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B9c-7A-UfF" userLabel="requirements container">
+                                <rect key="frame" x="0.0" y="309.5" width="600" height="290.5"/>
+                                <connections>
+                                    <segue destination="Uwj-HT-Sg4" kind="embed" identifier="show_requirements_checklist" id="D6c-PK-tUv"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="A70-aa-hmW" firstAttribute="leading" secondItem="2nH-Yu-VGH" secondAttribute="leadingMargin" id="7pf-Cr-b6A"/>
+                            <constraint firstItem="TX2-dB-vgx" firstAttribute="top" secondItem="B9c-7A-UfF" secondAttribute="bottom" id="HGZ-PX-4Hf"/>
+                            <constraint firstItem="A70-aa-hmW" firstAttribute="top" secondItem="yEW-jt-xMi" secondAttribute="bottom" constant="28" id="Jsp-Ns-kYW"/>
+                            <constraint firstItem="yEW-jt-xMi" firstAttribute="trailing" secondItem="2nH-Yu-VGH" secondAttribute="trailingMargin" id="Kdv-1t-BI6"/>
+                            <constraint firstItem="QBI-5d-Sm0" firstAttribute="trailing" secondItem="2nH-Yu-VGH" secondAttribute="trailingMargin" id="LI8-nx-d4h"/>
+                            <constraint firstItem="yEW-jt-xMi" firstAttribute="top" secondItem="QBI-5d-Sm0" secondAttribute="bottom" constant="8" id="PHX-2o-AEe"/>
+                            <constraint firstItem="B9c-7A-UfF" firstAttribute="leading" secondItem="2nH-Yu-VGH" secondAttribute="leadingMargin" constant="-20" id="X1n-uD-vHV"/>
+                            <constraint firstItem="A70-aa-hmW" firstAttribute="trailing" secondItem="2nH-Yu-VGH" secondAttribute="trailingMargin" id="ZfX-lp-h3W"/>
+                            <constraint firstItem="yEW-jt-xMi" firstAttribute="leading" secondItem="2nH-Yu-VGH" secondAttribute="leadingMargin" id="f2R-co-Wjs"/>
+                            <constraint firstItem="QBI-5d-Sm0" firstAttribute="top" secondItem="Wmw-Ve-oRi" secondAttribute="bottom" constant="8" id="gYP-jy-bxF"/>
+                            <constraint firstItem="QBI-5d-Sm0" firstAttribute="leading" secondItem="2nH-Yu-VGH" secondAttribute="leadingMargin" id="ghz-1S-n8B"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="B9c-7A-UfF" secondAttribute="trailing" constant="-20" id="hNx-ky-DMZ"/>
+                            <constraint firstItem="B9c-7A-UfF" firstAttribute="top" secondItem="A70-aa-hmW" secondAttribute="bottom" constant="8" id="lUV-Iy-Si4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="c2l-6t-ZU3">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="JJy-Qp-8hG" userLabel="navigation view">
+                            <rect key="frame" x="180" y="5.5" width="240" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="mccc-logo" translatesAutoresizingMaskIntoConstraints="NO" id="mmi-cK-H01" userLabel="mccc logo">
+                                    <rect key="frame" x="41" y="0.0" width="199" height="33"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grass-block-icon" translatesAutoresizingMaskIntoConstraints="NO" id="nlS-c0-aJf" userLabel="age icon">
+                                    <rect key="frame" x="0.0" y="0.0" width="33" height="33"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="33" id="3gz-Ah-Ygz"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="mmi-cK-H01" firstAttribute="top" secondItem="JJy-Qp-8hG" secondAttribute="top" id="6nM-bZ-ozx"/>
+                                <constraint firstItem="nlS-c0-aJf" firstAttribute="leading" secondItem="JJy-Qp-8hG" secondAttribute="leading" id="EZM-tE-i2n"/>
+                                <constraint firstAttribute="trailing" secondItem="mmi-cK-H01" secondAttribute="trailing" id="FdQ-9m-4ng"/>
+                                <constraint firstAttribute="bottom" secondItem="mmi-cK-H01" secondAttribute="bottom" id="MeM-gK-D9l"/>
+                                <constraint firstItem="nlS-c0-aJf" firstAttribute="top" secondItem="JJy-Qp-8hG" secondAttribute="top" id="T9a-zR-F11"/>
+                                <constraint firstAttribute="bottom" secondItem="nlS-c0-aJf" secondAttribute="bottom" id="WDy-LM-vzC"/>
+                                <constraint firstItem="mmi-cK-H01" firstAttribute="leading" secondItem="nlS-c0-aJf" secondAttribute="trailing" constant="8" id="a3q-vb-nxC"/>
+                            </constraints>
+                        </view>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="ageIconView" destination="nlS-c0-aJf" id="AUw-9Q-BUI"/>
+                        <outlet property="containerSegmentControl" destination="A70-aa-hmW" id="oaQ-4g-ghf"/>
+                        <outlet property="embeddedRequirementsContainer" destination="B9c-7A-UfF" id="9ut-2G-yEW"/>
+                        <outlet property="generalRequirementsLabel" destination="yEW-jt-xMi" id="x59-3c-Ths"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8lk-tk-koK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1205" y="429"/>
+        </scene>
+        <!--AgeRequirements-->
+        <scene sceneID="Q4A-MY-gf0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AgeRequirements" id="Uwj-HT-Sg4" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="huO-dA-rZE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1640.5" y="429"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="grass-block-icon" width="150" height="150"/>
+        <image name="mccc-logo" width="1827" height="454"/>
+    </resources>
+</document>
