@@ -1,0 +1,1204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>play</key>
+	<dict>
+		<key>plot</key>
+		<string>Starting with nothing but your hands and will, progress through various stages to construct the ultimate stronghold to defend your spawn point!</string>
+		<key>objective</key>
+		<string>You awaken in a strange and wonderful land with no memory of how you got there. You realize that the place you first opened your eyes has some sort of mystical power, power strong enough to draw you back to it whenever you are at the gates of death. Though you do not understand the power of that one special spot, you decide to protect it and honor it as hallowed ground for all the times it has saved you from being lost forever to the void. And so, with only the strength of your hands and the sense of purpose in your heart, you set out to construct the ultimate fortification around your spawn and thus create the heart of your future empire.</string>
+	</dict>
+	<key>tips</key>
+	<array>
+		<string>Plan ahead! Your castle is going to become larger as you go along, so make sure that you leave yourself room to expand. It might also be helpful to sketch out your castle in advance.</string>
+	</array>
+	<key>rules</key>
+	<array>
+		<string>Play at least on EASY</string>
+		<string>Start a new survival world. 
+Be sure to mark your spawn point so you can find it later! Your castle will enclose this vital and mystical block and protect it from all the hostile foes of the outside world</string>
+		<string>Your spawn point must be protected from mobs at all times. 
+Therefore, you first task is to build a temporary shelter around your spawn before nightfall on the first day</string>
+		<string>The block you spawn on can be replaced, but it&apos;s location must be protected</string>
+		<string>Follow the rules for each stage, and do not progress to the next stage until all requirements for the current stage have been met</string>
+		<string>The requirements for each stage replace the requirements of the stage that came before it. 
+In other words, the stone wall in Stage 2 should replace your log wall from Stage 1. 
+As a variant, you can also reinforce your log wall with stone/cobble stone and build an outer wall from stone/cobble as per Stage 2 requirements</string>
+		<string>Towns can be raided for supplies, but the buildings themselves do not count towards the requirements for each stage</string>
+		<string>Items found in dungeon chests can be used during any stage</string>
+		<string>You must always carry a sword (i.e. have it in your quickbar). 
+If your sword breaks, immediately cease all activity and craft a new one</string>
+		<string>Post screenshots to verify the completion of each stage</string>
+	</array>
+	<key>ages</key>
+	<dict>
+		<key>diamond</key>
+		<dict>
+			<key>requirements</key>
+			<dict>
+				<key>general</key>
+				<array>
+					<string>From your first night onwards, your spawn point must be safe from mobs at all times, and protected from the rain</string>
+					<string>Any type of tool can be used</string>
+					<string>Redstone can be used in circuitry</string>
+					<string>Construct a sword and keep it in your quick bar, even while safe. If your sword breaks, immediately build a new one.</string>
+					<string>A flag displaying your chosen colors should always be visible from outside the wall.</string>
+				</array>
+				<key>treasure</key>
+				<array>
+					<dict>
+						<key>quantity</key>
+						<integer>3</integer>
+						<key>item</key>
+						<string>Diamonds</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>5</integer>
+						<key>item</key>
+						<string>Iron Block</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>10</integer>
+						<key>item</key>
+						<string>Lapis Lazuli Block</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>3</integer>
+						<key>item</key>
+						<string>Gold Block</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+				</array>
+				<key>materials</key>
+				<array>
+					<dict>
+						<key>quantity</key>
+						<integer>1</integer>
+						<key>item</key>
+						<string>Diamond Pickaxe</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>64</integer>
+						<key>item</key>
+						<string>Torches</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>320</integer>
+						<key>item</key>
+						<string>Logs</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>1</integer>
+						<key>item</key>
+						<string>Diamond Sword</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>64</integer>
+						<key>item</key>
+						<string>Smoothstone</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>320</integer>
+						<key>item</key>
+						<string>Cobblestone or Sandstone</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>20</integer>
+						<key>item</key>
+						<string>Wool</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>20</integer>
+						<key>item</key>
+						<string>Cooked Meat</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>20</integer>
+						<key>item</key>
+						<string>Bread</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>1</integer>
+						<key>item</key>
+						<string>Full Set of Iron Tools (axe, shovel, pick, hoe)</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>1</integer>
+						<key>item</key>
+						<string>Full Set of Iron Armor</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>1</integer>
+						<key>item</key>
+						<string>Bow</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>64</integer>
+						<key>item</key>
+						<string>Arrows</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>1</integer>
+						<key>item</key>
+						<string>Bucket</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+				</array>
+				<key>construction</key>
+				<array>
+					<dict>
+						<key>item</key>
+						<string>A main wall at least 7 blocks high and 3 blocks wide made from Cobble, Stone, Stone Bricks, or Sandstone that encloses your spawn point, the Keep, the secondary wall, and all other buildings. 
+There must be at least 3 gates in the wall that allow you to pass through the wall, but prevent hostile mobs from entering. 
+The wall also needs to be spider-proof, and have a ladder or staircase leading to the top of the wall</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>At least four guard towers mounted around the perimeter of the main wall</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A moat or other type of trap around the outside of the main wall</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A gatekeeper&apos;s house outside of the main gate</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A Keep, either constructed from or reinforced by Stone/Cobblestone / Sandstone. Must contain at least 3 levels, a door, a storage room, a kitchen, a treasure room, a great hall, a throne room, a dungeon with mob spawning areas/mob grinders, and master bedroom with a bed, and at least 1 guestroom with a bed</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A nether portal (can be inside keep)</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A wizard&apos;s tower or queen&apos;s tower attached to the Keep</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A secondary wall at least 5 blocks high around the Keep. 
+Must contain at least 1 gate</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A barracks / armory</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A black smith&apos;s shop</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A chapel / temple</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>1 other building of your choice (library, bath house, kennel, etc)</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A roof at least two blocks above your spawn point to protect it from rain.
+Your spawn point can be located inside your keep, if you wish</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A wheat farm with at least 20 growing wheat</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>Three animal pens with roofs, each containing at least two of the same animal. The type of animal in each pen should be different</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A courtyard area</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A royal garden (can be inside the courtyard area)</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A well (infinite water source)</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A mine at least 30 blocks deep (can be outside the main wall). 
+Every mineshaft must be at least 3 blocks high by 3 blocks wide</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A tree farm with at least 10 trees (can be outside the main wall)</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A port (if near water) or stables</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A road leading from the main gate to the port or stables</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+				</array>
+				<key>construction_additional</key>
+				<array>
+					<dict>
+						<key>item</key>
+						<string>Automate the main gate</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>Create a hidden entrance to the treasury room</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>Replace your spawn block with a diamond block</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>Light your castle with glowstone lanterns (inside and out)</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>Create a fire place in the great hall</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>Create a throne out of gold blocks</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+		<key>gold</key>
+		<dict>
+			<key>requirements</key>
+			<dict>
+				<key>general</key>
+				<array>
+					<string>From your first night onwards, your spawn point must be safe from mobs at all times, and protected from the rain</string>
+					<string>Any type of tool can be used</string>
+					<string>Redstone can be collected, but cannot be used in circuitry</string>
+					<string>Construct a sword and keep it in your quick bar, even while safe. If your sword breaks, immediately build a new one.</string>
+					<string>A flag displaying your chosen colors should always be visible from outside the wall.</string>
+				</array>
+				<key>treasure</key>
+				<array>
+					<dict>
+						<key>quantity</key>
+						<integer>1</integer>
+						<key>item</key>
+						<string>Gold Block</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>5</integer>
+						<key>item</key>
+						<string>Lapis Lazuli Block</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>1</integer>
+						<key>item</key>
+						<string>Iron Block</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>1</integer>
+						<key>item</key>
+						<string>Diamond</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+				</array>
+				<key>materials</key>
+				<array>
+					<dict>
+						<key>quantity</key>
+						<integer>1</integer>
+						<key>item</key>
+						<string>Bow</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>1</integer>
+						<key>item</key>
+						<string>Full Set of Iron Armor</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>1</integer>
+						<key>item</key>
+						<string>Bucket</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>32</integer>
+						<key>item</key>
+						<string>Arrows</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>1</integer>
+						<key>item</key>
+						<string>Full Set of Iron Tools (axe, shovel, pick, hoe)</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>10</integer>
+						<key>item</key>
+						<string>Cooked Meat</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>10</integer>
+						<key>item</key>
+						<string>Wool</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>10</integer>
+						<key>item</key>
+						<string>Bread</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>192</integer>
+						<key>item</key>
+						<string>Logs</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>192</integer>
+						<key>item</key>
+						<string>Cobblestone or Sandstone</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+				</array>
+				<key>construction</key>
+				<array>
+					<dict>
+						<key>item</key>
+						<string>A main wall at least 7 blocks high and 3 blocks wide made from Cobblestone, Stone, Stone Bricks, or Sandstone that encloses your spawn point, the Keep, the secondary wall, and all other buildings. 
+There must be at least 3 gates in the wall that allow you to pass through the wall, but prevent hostile mobs from entering. 
+The wall also needs to be spider-proof, and have a ladder or staircase leading to the top of the wall</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>At least four guard towers mounted around the perimeter of the main wall</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A Keep, either constructed from or reinforced by Stone /Cobblestone / Sandstone. Must contain at least 3 levels, a door, a storage room, a kitchen, a treasure room, a great hall, a throne room, a dungeon with mob spawning areas / mob grinders, and master bedroom with a bed, and at least 1 guestroom with a bed</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A wizard&apos;s tower or queen&apos;s tower attached to the Keep</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A secondary wall at least 5 blocks high around the Keep. 
+Must contain at least 1 gate</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A barracks / armory</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A black smith&apos;s shop</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A chapel / temple</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>1 other building of your choice (library, bath house, kennel, etc)</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A roof at least two blocks above your spawn point to protect it from rain.
+Your spawn point can be located inside your keep, if you wish</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A wheat farm with at least 20 growing wheat</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>Three animal pens with roofs, each containing at least two of the same animal. The type of animal in each pen should be different</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A courtyard area</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A royal garden (can be inside the courtyard area)</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A well (infinite water source)</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A mine at least 30 blocks deep (can be outside the main wall). Every mineshaft must be at least 3 blocks high by 3 blocks wide</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A tree farm with at least 10 trees (can be outside the main wall)</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+		<key>iron</key>
+		<dict>
+			<key>requirements</key>
+			<dict>
+				<key>general</key>
+				<array>
+					<string>From your first night onwards, your spawn point must be safe from mobs at all times, and protected from the rain</string>
+					<string>No Gold or Diamond Tools</string>
+					<string>Redstone can be collected, but cannot be used in circuitry</string>
+					<string>Construct a sword and keep it in your quick bar, even while safe. If your sword breaks, immediately build a new one.</string>
+					<string>From this point onward, a flag displaying your chosen colors should always be visible from outside the wall.</string>
+				</array>
+				<key>treasure</key>
+				<array>
+					<dict>
+						<key>quantity</key>
+						<integer>5</integer>
+						<key>item</key>
+						<string>Gold Bars</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>5</integer>
+						<key>item</key>
+						<string>Iron Bars</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+				</array>
+				<key>materials</key>
+				<array>
+					<dict>
+						<key>quantity</key>
+						<integer>10</integer>
+						<key>item</key>
+						<string>Bread</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>10</integer>
+						<key>item</key>
+						<string>Wool</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>10</integer>
+						<key>item</key>
+						<string>Cooked Meat</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>64</integer>
+						<key>item</key>
+						<string>Logs</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>1</integer>
+						<key>item</key>
+						<string>Full Set of Iron Armor</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>1</integer>
+						<key>item</key>
+						<string>Full Set of Iron Tools (axe, shovel, pick, hoe)</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>1</integer>
+						<key>item</key>
+						<string>Bow</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>16</integer>
+						<key>item</key>
+						<string>Arrows</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>1</integer>
+						<key>item</key>
+						<string>Bucket</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>64</integer>
+						<key>item</key>
+						<string>Torches</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+				</array>
+				<key>construction</key>
+				<array>
+					<dict>
+						<key>item</key>
+						<string>A main wall at least 5 blocks high and 2 blocks wide made from Cobblestone, Stone, Stone bricks, or Sandstone that encloses your spawn point, the Keep, the secondary wall, and all other buildings.
+There must be at least 2 gates in the wall that allow you to pass through the wall, but prevent hostile mobs from entering. 
+The wall also needs to be spider-proof, and have a ladder or staircase leading to the top of the wall</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>At least 2 guard towers mounted around the perimeter of the wall</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A Keep, either constructed from or reinforced by Stone /Coobblestone / Sandstone. 
+Must contain at least 3 levels, a door, a storage room, a treasure room, a great hall, and a sleeping area with a bed</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A secondary wall at least 3 blocks high around the Keep. 
+Must contain at least 1 gate</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A barracks / armory</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A black smith&apos;s shop</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A roof at least two blocks above your spawn point to protect it from rain.
+Your spawn point can be located inside your keep, if you wish</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A wheat farm with at least 20 growing wheat</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A courtyard area</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A well (infinite water source)</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A mine at least 30 blocks deep (can be outside the main wall).
+Every mineshaft must be at least 3 blocks high by 3 blocks wide</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A tree farm with at least 10 trees (can be outside the main wall)</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+		<key>stone</key>
+		<dict>
+			<key>requirements</key>
+			<dict>
+				<key>general</key>
+				<array>
+					<string>From your first night onwards, your spawn point must be safe from mobs at all times, and protected from the rain</string>
+					<string>Mobs should not be able to spawn anywhere inside the main wall (except for in the dungeon from the gold age onward)</string>
+					<string>Only use wooden or stone tools</string>
+					<string>Redstone can be collected, but cannot be used in circuitry</string>
+					<string>Construct a sword and keep it in your quick bar, even while safe. If your sword breaks, immediately build a new one.</string>
+				</array>
+				<key>treasure</key>
+				<array>
+					<dict>
+						<key>quantity</key>
+						<integer>5</integer>
+						<key>item</key>
+						<string>Iron Bars</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+				</array>
+				<key>materials</key>
+				<array>
+					<dict>
+						<key>quantity</key>
+						<integer>1</integer>
+						<key>item</key>
+						<string>Full Set of Stone Tools (axe, shovel, pick, hoe)</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>1</integer>
+						<key>item</key>
+						<string>Full Set of Leather Armor</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>10</integer>
+						<key>item</key>
+						<string>Bread</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>10</integer>
+						<key>item</key>
+						<string>Cooked Meat</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>64</integer>
+						<key>item</key>
+						<string>Logs</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+				</array>
+				<key>construction</key>
+				<array>
+					<dict>
+						<key>item</key>
+						<string>A main wall 3 blocks high made from cobble, stone, stone bricks, or sandstone that encloses your spawn point, the Keep, and all other buildings.
+There must be at least 2 gates in the wall that allow you to pass through the wall, but prevent hostile mobs from entering.
+The wall also needs to be spider-proof</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A guard tower</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A Keep, either constructed from or reinforced by Stone/Cobblestone/Sandstone. 
+Must contain at least 2 levels, a door, a storage room, and a sleeping area with a bed</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A roof at least two blocks above your spawn point to protect it from rain. 
+Your spawn point can be located inside your keep, if you wish</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A wheat farm with at least 12 growing wheat</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>Two animal pens with roofs, each containing at least two of the same animal.
+The type of animal in each pen should be different</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A courtyard area</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A mine at least 20 blocks deep (can be outside the wall). 
+Every mineshaft must be at least 3 blocks high by 3 blocks wide</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+		<key>wooden</key>
+		<dict>
+			<key>requirements</key>
+			<dict>
+				<key>general</key>
+				<array>
+					<string>From your first night onwards, your spawn point must be safe from mobs at all times, and protected from the rain</string>
+					<string>Mobs should not be able to spawn anywhere inside the main wall (except for in the dungeon from the gold age onward)</string>
+					<string>Only use wooden tools</string>
+					<string>CobbleStone / Stone / Sandstone / Stone Brick cannot be used for anything except furnaces</string>
+					<string>Construct a sword and keep it in your quick bar, even while safe. If your sword breaks, immediately build a new one.</string>
+				</array>
+				<key>treasure</key>
+				<array>
+					<dict>
+						<key>quantity</key>
+						<integer>1</integer>
+						<key>item</key>
+						<string>Sapling</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+				</array>
+				<key>materials</key>
+				<array>
+					<dict>
+						<key>quantity</key>
+						<integer>64</integer>
+						<key>item</key>
+						<string>Torches</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>1</integer>
+						<key>item</key>
+						<string>Full Set of Wooden Tools (axe, shovel, pick, hoe)</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>1</integer>
+						<key>item</key>
+						<string>Item of Leather Armor</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>3</integer>
+						<key>item</key>
+						<string>Bread</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>3</integer>
+						<key>item</key>
+						<string>Cooked Meat</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>quantity</key>
+						<integer>64</integer>
+						<key>item</key>
+						<string>Logs</string>
+						<key>completed</key>
+						<false/>
+					</dict>
+				</array>
+				<key>construction</key>
+				<array>
+					<dict>
+						<key>item</key>
+						<string>A wall made from logs that encloses your spawn point and the keep.
+Must be at least three blocks high and be spider-proof</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>At least 1 gate in the wall that allows you to pass through the wall, but prevents hostile mobs from entering</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A keep (i.e., house or base).
+</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A roof at least two blocks above your spawn point to protect it from rain.
+Your spawn point can be located inside your keep, if you wish</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>A wheat farm with at least 6 growing wheat</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>item</key>
+						<string>An animal pen containing at least two of the same animal</string>
+						<key>quantity</key>
+						<integer>0</integer>
+						<key>completed</key>
+						<false/>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
