@@ -15,6 +15,8 @@ class RulesViewController: UITableViewController {
     //NOTE: All PLIST Data
     var plistDict: NSMutableDictionary?
     var rules: NSArray?
+    
+    var csdcObserver: NSObjectProtocol?
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -26,6 +28,11 @@ class RulesViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        csdcObserver = NSNotificationCenter.defaultCenter().addObserverForName(UIContentSizeCategoryDidChangeNotification, object: nil, queue: nil) { (notification) -> Void in
+            
+            self.tableView.reloadData()
+        }
+        
         configTableView()
     }
     
@@ -33,6 +40,14 @@ class RulesViewController: UITableViewController {
         super.viewDidAppear(animated)
         
         configTableViewData()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if csdcObserver != nil {
+            NSNotificationCenter.defaultCenter().removeObserver(csdcObserver!)
+        }
     }
 
     override func didReceiveMemoryWarning() {

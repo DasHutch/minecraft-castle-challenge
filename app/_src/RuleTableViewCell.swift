@@ -31,8 +31,14 @@ class RuleTableViewCell: UITableViewCell {
     
     //MARK: - Public
     func loadRule(rule: String, withIndex index: Int) {
+        
         updateRuleLabel(rule)
+        ruleLabel.font =  UIFont.preferredAvenirFontForTextStyle(UIFontTextStyleHeadline)
+            //UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+        
         updateRuleIndexLabel(index)
+        indexLabel.font =  UIFont.preferredAvenirFontForTextStyle(UIFontTextStyleBody)
+            //UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
     }
     
     //MARK: - Private
@@ -46,7 +52,6 @@ class RuleTableViewCell: UITableViewCell {
             let nonZeroBasedIndex = ruleIndex! + 1
             let ruleIndexString = "\(nonZeroBasedIndex)."
             updateLabel(indexLabel, withText: ruleIndexString)
-            
         }else {
             updateLabel(indexLabel, withText: "")
         }

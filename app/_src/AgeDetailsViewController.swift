@@ -19,6 +19,7 @@ class AgeDetailsViewController: UIViewController {
     }
     
     @IBOutlet weak var ageIconView: UIImageView!
+    @IBOutlet weak var generalRequirementsHeadlineLabel: UILabel!
     @IBOutlet weak var generalRequirementsLabel: UILabel!
     
     @IBOutlet weak var embeddedRequirementsContainer: UIView!
@@ -57,7 +58,7 @@ class AgeDetailsViewController: UIViewController {
         
         csdcObserver = NSNotificationCenter.defaultCenter().addObserverForName(UIContentSizeCategoryDidChangeNotification, object: nil, queue: nil) { (notification) -> Void in
             
-            //TODO: Update labels, etc...
+            self.updateUI()
         }
     }
     
@@ -175,8 +176,11 @@ class AgeDetailsViewController: UIViewController {
             selectedRequirement = nil
             break
         }
-        
+    
         updateEmbeddedRequirementTableView()
+        
+        generalRequirementsHeadlineLabel.font = UIFont.preferredAvenirFontForTextStyle(UIFontTextStyleHeadline)
+        generalRequirementsLabel.font = UIFont.preferredAvenirFontForTextStyle(UIFontTextStyleBody)
     }
     
     private func updateGeneralRequirementsLabel() {
