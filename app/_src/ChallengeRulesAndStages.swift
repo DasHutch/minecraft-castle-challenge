@@ -9,7 +9,15 @@
 import UIKit
 
 class ChallengeRulesAndStages: UITableViewController {
-
+    
+    @IBOutlet weak var objectiveAndPlotStaticCellLabel: UILabel!
+    @IBOutlet weak var rulesStaticCellLabel: UILabel!
+    @IBOutlet weak var woodenAgeStaticCellLabel: UILabel!
+    @IBOutlet weak var stoneAgeStaticCellLabel: UILabel!
+    @IBOutlet weak var ironAgeStaticCellLabel: UILabel!
+    @IBOutlet weak var goldAgeStaticCellLabel: UILabel!
+    @IBOutlet weak var diamondAgeStaticCellLabel: UILabel!
+    
     private struct ChallengeRulesAndStagesTableViewSections {
         static let HowToPlay = 0
         static let Stages = 1
@@ -25,17 +33,20 @@ class ChallengeRulesAndStages: UITableViewController {
         configTableView()
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
         csdcObserver = NSNotificationCenter.defaultCenter().addObserverForName(UIContentSizeCategoryDidChangeNotification, object: nil, queue: nil) { (notification) -> Void in
             
-            //TODO: Update table cells...
+            self.updateUI()
+            self.tableView.reloadData()
         }
+        
+        updateUI()
     }
-    
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
+
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
         
         if csdcObserver != nil {
             NSNotificationCenter.defaultCenter().removeObserver(csdcObserver!)
@@ -63,12 +74,23 @@ class ChallengeRulesAndStages: UITableViewController {
     }
     
     // MARK: - Private
-    func configTableView() {
+    private func configTableView() {
         
-        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.estimatedRowHeight = 44.0//tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
 
         tableView.separatorInset = UIEdgeInsetsZero
+    }
+    
+    private func updateUI() {
+       
+        objectiveAndPlotStaticCellLabel.font = UIFont.preferredAvenirFontForTextStyle(UIFontTextStyleTitle2)
+        rulesStaticCellLabel.font = UIFont.preferredAvenirFontForTextStyle(UIFontTextStyleTitle2)
+        woodenAgeStaticCellLabel.font = UIFont.preferredAvenirFontForTextStyle(UIFontTextStyleTitle2)
+        stoneAgeStaticCellLabel.font = UIFont.preferredAvenirFontForTextStyle(UIFontTextStyleTitle2)
+        ironAgeStaticCellLabel.font = UIFont.preferredAvenirFontForTextStyle(UIFontTextStyleTitle2)
+        goldAgeStaticCellLabel.font = UIFont.preferredAvenirFontForTextStyle(UIFontTextStyleTitle2)
+        diamondAgeStaticCellLabel.font = UIFont.preferredAvenirFontForTextStyle(UIFontTextStyleTitle2)
     }
 }
 

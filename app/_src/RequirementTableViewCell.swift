@@ -40,6 +40,11 @@ class RequirementTableViewCell: UITableViewCell {
         updateItemLabel(item)
         updateQuantityLabel(quantity)
         accessoryTypeForCompleted(completed)
+        
+        quantityLabel.font = UIFont.preferredAvenirFontForTextStyle(UIFontTextStyleHeadline)
+            //UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+        itemLabel.font = UIFont.preferredAvenirFontForTextStyle(UIFontTextStyleBody)
+            //UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
     }
     
     //MARK: - Private

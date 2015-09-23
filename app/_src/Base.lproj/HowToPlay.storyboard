@@ -8,7 +8,7 @@
         <!--Objective & Plot-->
         <scene sceneID="3kR-4Y-8q6">
             <objects>
-                <viewController id="pxr-rO-kzr" sceneMemberID="viewController">
+                <viewController id="pxr-rO-kzr" customClass="HowToPlayViewController" customModule="MC_CC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RUV-5T-2kC"/>
                         <viewControllerLayoutGuide type="bottom" id="RvT-8C-l2V"/>
@@ -18,28 +18,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="751" text="Objective:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cQk-Wh-Y3h">
-                                <rect key="frame" x="20" y="28" width="95" height="25.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <rect key="frame" x="20" y="28" width="77" height="19.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" text="Plot:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fkH-fv-Ois">
-                                <rect key="frame" x="20" y="97" width="95" height="25.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <rect key="frame" x="20" y="97" width="77" height="19.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oYp-kH-y9q">
-                                <rect key="frame" x="123" y="28" width="457" height="61.5"/>
+                                <rect key="frame" x="105" y="28" width="475" height="61.5"/>
                                 <string key="text">Starting with nothing but your hands and will, progress through various stages to construct the ultimate stronghold to defend your spawn point!</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MFn-l6-XBf">
-                                <rect key="frame" x="20" y="553" width="560" height="26.5"/>
+                                <rect key="frame" x="20" y="549" width="560" height="30.5"/>
                                 <string key="text">Plan ahead! Your castle is going to become larger as you go along, so make sure that you leave yourself room to expand. It might also be helpful to sketch out your castle in advance.</string>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
@@ -47,7 +47,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="254" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Bm-ln-7cF">
-                                <rect key="frame" x="123" y="97" width="457" height="229.5"/>
+                                <rect key="frame" x="105" y="97" width="475" height="229.5"/>
                                 <string key="text">You awaken in a strange and wonderful land with no memory of how you got there. You realize that the place you first opened your eyes has some sort of mystical power, power strong enough to draw you back to it whenever you are at the gates of death. Though you do not understand the power of that one special spot, you decide to protect it and honor it as hallowed ground for all the times it has saved you from being lost forever to the void. And so, with only the strength of your hands and the sense of purpose in your heart, you set out to construct the ultimate fortification around your spawn and thus create the heart of your future empire.</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -89,12 +89,12 @@
                                 <exclude reference="FUn-4B-2bj"/>
                                 <exclude reference="PSU-f8-git"/>
                                 <exclude reference="cMa-31-mEI"/>
-                                <exclude reference="1Fg-Qa-rzo"/>
-                                <exclude reference="mel-a4-XJc"/>
-                                <exclude reference="s6Z-IH-Okg"/>
                                 <exclude reference="4GD-7w-wKU"/>
                                 <exclude reference="C9z-lF-TPU"/>
                                 <exclude reference="hEu-fY-rXP"/>
+                                <exclude reference="1Fg-Qa-rzo"/>
+                                <exclude reference="mel-a4-XJc"/>
+                                <exclude reference="s6Z-IH-Okg"/>
                                 <exclude reference="9Wc-p5-YTt"/>
                                 <exclude reference="MCR-hf-Ynd"/>
                                 <exclude reference="iis-Lh-zqJ"/>
@@ -107,16 +107,16 @@
                                 <include reference="FUn-4B-2bj"/>
                                 <include reference="PSU-f8-git"/>
                                 <include reference="cMa-31-mEI"/>
+                                <include reference="4GD-7w-wKU"/>
+                                <include reference="C9z-lF-TPU"/>
+                                <exclude reference="hCg-OI-D6R"/>
+                                <include reference="hEu-fY-rXP"/>
                                 <include reference="1Fg-Qa-rzo"/>
                                 <exclude reference="IN8-lO-dzk"/>
                                 <exclude reference="J79-Xx-1cH"/>
                                 <exclude reference="hqD-HQ-FPk"/>
                                 <include reference="mel-a4-XJc"/>
                                 <include reference="s6Z-IH-Okg"/>
-                                <include reference="4GD-7w-wKU"/>
-                                <include reference="C9z-lF-TPU"/>
-                                <exclude reference="hCg-OI-D6R"/>
-                                <include reference="hEu-fY-rXP"/>
                                 <exclude reference="1Ex-dY-hcC"/>
                                 <include reference="9Wc-p5-YTt"/>
                                 <include reference="MCR-hf-Ynd"/>
@@ -129,6 +129,13 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Objective &amp; Plot" prompt="How to Play" id="ycw-m8-6jA"/>
+                    <connections>
+                        <outlet property="objectiveBodyLabel" destination="oYp-kH-y9q" id="TTw-Q7-cjO"/>
+                        <outlet property="objectiveHeadlineLabel" destination="cQk-Wh-Y3h" id="Bzg-cA-3ZM"/>
+                        <outlet property="plotBodyLabel" destination="7Bm-ln-7cF" id="mc7-eA-MKR"/>
+                        <outlet property="plotHeadlineLabel" destination="fkH-fv-Ois" id="qHr-30-gdc"/>
+                        <outlet property="tipFootnoteLabel" destination="MFn-l6-XBf" id="c1O-lk-sVd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="90y-d6-pKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -24,17 +24,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yEW-jt-xMi">
-                                <rect key="frame" x="20" y="105" width="560" height="140"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="Xqg-da-o18"/>
-                                </constraints>
+                                <rect key="frame" x="20" y="105" width="560" height="166.5"/>
                                 <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="A70-aa-hmW" userLabel="requirements selector">
-                                <rect key="frame" x="20" y="273" width="560" height="29"/>
+                                <rect key="frame" x="20" y="299" width="560" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="frF-Wj-qIS"/>
+                                </constraints>
                                 <segments>
                                     <segment title="Construction"/>
                                     <segment title="Materials"/>
@@ -49,7 +49,10 @@
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B9c-7A-UfF" userLabel="requirements container">
-                                <rect key="frame" x="0.0" y="309.5" width="600" height="290.5"/>
+                                <rect key="frame" x="0.0" y="335.5" width="600" height="264.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="v9l-Yp-8Fu"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="Uwj-HT-Sg4" kind="embed" identifier="show_requirements_checklist" id="D6c-PK-tUv"/>
                                 </connections>
@@ -104,6 +107,7 @@
                         <outlet property="ageIconView" destination="nlS-c0-aJf" id="AUw-9Q-BUI"/>
                         <outlet property="containerSegmentControl" destination="A70-aa-hmW" id="oaQ-4g-ghf"/>
                         <outlet property="embeddedRequirementsContainer" destination="B9c-7A-UfF" id="9ut-2G-yEW"/>
+                        <outlet property="generalRequirementsHeadlineLabel" destination="QBI-5d-Sm0" id="2Sw-5v-Kpa"/>
                         <outlet property="generalRequirementsLabel" destination="yEW-jt-xMi" id="x59-3c-Ths"/>
                     </connections>
                 </viewController>

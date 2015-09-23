@@ -41,7 +41,7 @@ class AgeDetailsRequirementsTableViewController: UITableViewController {
         
         csdcObserver = NSNotificationCenter.defaultCenter().addObserverForName(UIContentSizeCategoryDidChangeNotification, object: nil, queue: nil) { (notification) -> Void in
             
-            //TODO: Update table cells for font size change
+            self.tableView.reloadData()
         }
         
         //NOTE: Only get data from plist directly
