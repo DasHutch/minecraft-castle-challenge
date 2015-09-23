@@ -30,6 +30,8 @@
 		17B367311B93E77500FFD061 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B367301B93E77500FFD061 /* UserDefaults.swift */; };
 		17B367331B93E79F00FFD061 /* XCGLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B367321B93E79F00FFD061 /* XCGLogger.swift */; };
 		17B9575A1B955810003334DB /* AgeDetailsRequirementsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B957591B955810003334DB /* AgeDetailsRequirementsTableViewController.swift */; };
+		17D7F1CD1BB301AB003707BA /* UIFont+AvenirContentSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D7F1CC1BB301AB003707BA /* UIFont+AvenirContentSize.swift */; settings = {ASSET_TAGS = (); }; };
+		17D7F1D11BB316DD003707BA /* HowToPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D7F1D01BB316DD003707BA /* HowToPlayViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		17B367301B93E77500FFD061 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		17B367321B93E79F00FFD061 /* XCGLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCGLogger.swift; sourceTree = "<group>"; };
 		17B957591B955810003334DB /* AgeDetailsRequirementsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeDetailsRequirementsTableViewController.swift; sourceTree = "<group>"; };
+		17D7F1CC1BB301AB003707BA /* UIFont+AvenirContentSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+AvenirContentSize.swift"; sourceTree = "<group>"; };
+		17D7F1D01BB316DD003707BA /* HowToPlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToPlayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +229,7 @@
 				17B367301B93E77500FFD061 /* UserDefaults.swift */,
 				171B07AA1B926C1800217266 /* SegueIdentifiers.swift */,
 				177C71F11BA5F1A900720577 /* UIViewController+ContentViewController.swift */,
+				17D7F1CC1BB301AB003707BA /* UIFont+AvenirContentSize.swift */,
 			);
 			name = application;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				171B07A81B926B3000217266 /* ChallengeRulesAndStages.swift */,
+				17D7F1D01BB316DD003707BA /* HowToPlayViewController.swift */,
 			);
 			name = "challenge-rules-objective";
 			sourceTree = "<group>";
@@ -391,9 +397,11 @@
 				17B9575A1B955810003334DB /* AgeDetailsRequirementsTableViewController.swift in Sources */,
 				177C71F51BA60A3800720577 /* CastleChallenge.swift in Sources */,
 				177C71F21BA5F1A900720577 /* UIViewController+ContentViewController.swift in Sources */,
+				17D7F1CD1BB301AB003707BA /* UIFont+AvenirContentSize.swift in Sources */,
 				17159B731BAF45F600E71174 /* RulesViewController.swift in Sources */,
 				17159B751BAF48FB00E71174 /* RuleTableViewCell.swift in Sources */,
 				17B367271B93E2F100FFD061 /* AgeDetailsViewController.swift in Sources */,
+				17D7F1D11BB316DD003707BA /* HowToPlayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
