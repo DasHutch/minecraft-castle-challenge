@@ -24,7 +24,7 @@ class AgeDetailsViewController: UIViewController {
     
     @IBOutlet weak var embeddedRequirementsContainer: UIView!
     @IBOutlet weak var containerSegmentControl: UISegmentedControl!
-    
+
     var requirementViewController: AgeDetailsRequirementsTableViewController?
     
     var stage: ChallengeStages?
@@ -43,8 +43,6 @@ class AgeDetailsViewController: UIViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //NOTE: Only need to call this once on load
         updateAgeIcon()
     }
     
@@ -92,6 +90,8 @@ class AgeDetailsViewController: UIViewController {
     }
     
     //MARK: - Private
+    
+    //TODO: Refactor to DataManager Class
     private func configData() {
         
         let path = FileManager.defaultManager.challengeProgressPLIST()
@@ -161,17 +161,13 @@ class AgeDetailsViewController: UIViewController {
     private func updateUI() {
         
         switch containerSegmentControl.selectedSegmentIndex {
-        case 0: //Construction
-            
+        case ChallengeStageRequirements.Construction.rawValue:
             selectedRequirement = .Construction
-        case 1: //Materials
-            
+        case ChallengeStageRequirements.Materials.rawValue:
             selectedRequirement = .Materials
-        case 2: //Treasure
-            
+        case ChallengeStageRequirements.Treasure.rawValue:
             selectedRequirement = .Treasure
         default: //Do Nothing
-            
             log.error("Attempted to select unknown index: \(containerSegmentControl.selectedSegmentIndex) for requirements segment control")
             selectedRequirement = nil
             break
