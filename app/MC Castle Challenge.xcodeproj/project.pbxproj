@@ -25,6 +25,9 @@
 		177C71ED1BA5034300720577 /* AgeRequirements.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 177C71EB1BA5034300720577 /* AgeRequirements.storyboard */; settings = {ASSET_TAGS = (); }; };
 		177C71F21BA5F1A900720577 /* UIViewController+ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177C71F11BA5F1A900720577 /* UIViewController+ContentViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		177C71F51BA60A3800720577 /* CastleChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177C71F41BA60A3800720577 /* CastleChallenge.swift */; settings = {ASSET_TAGS = (); }; };
+		1790FCFF1BB4762400C2A21E /* Array+AtIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790FCFE1BB4762400C2A21E /* Array+AtIndex.swift */; settings = {ASSET_TAGS = (); }; };
+		1790FD031BB4786300C2A21E /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790FD021BB4786300C2A21E /* Rule.swift */; settings = {ASSET_TAGS = (); }; };
+		1790FD051BB47E5C00C2A21E /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790FD041BB47E5C00C2A21E /* BaseTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		1798CFE41B93B524008B64D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 171B077E1B92642500217266 /* Main.storyboard */; };
 		17B367271B93E2F100FFD061 /* AgeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B367261B93E2F100FFD061 /* AgeDetailsViewController.swift */; };
 		17B367311B93E77500FFD061 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B367301B93E77500FFD061 /* UserDefaults.swift */; };
@@ -77,6 +80,9 @@
 		177C71EC1BA5034300720577 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AgeRequirements.storyboard; sourceTree = "<group>"; };
 		177C71F11BA5F1A900720577 /* UIViewController+ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ContentViewController.swift"; sourceTree = "<group>"; };
 		177C71F41BA60A3800720577 /* CastleChallenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastleChallenge.swift; sourceTree = "<group>"; };
+		1790FCFE1BB4762400C2A21E /* Array+AtIndex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+AtIndex.swift"; sourceTree = "<group>"; };
+		1790FD021BB4786300C2A21E /* Rule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
+		1790FD041BB47E5C00C2A21E /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		17B367261B93E2F100FFD061 /* AgeDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeDetailsViewController.swift; sourceTree = "<group>"; };
 		17B367301B93E77500FFD061 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		17B367321B93E79F00FFD061 /* XCGLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCGLogger.swift; sourceTree = "<group>"; };
@@ -115,6 +121,7 @@
 			children = (
 				17159B721BAF45F600E71174 /* RulesViewController.swift */,
 				17159B741BAF48FB00E71174 /* RuleTableViewCell.swift */,
+				1790FD021BB4786300C2A21E /* Rule.swift */,
 			);
 			name = rules;
 			sourceTree = "<group>";
@@ -230,6 +237,8 @@
 				171B07AA1B926C1800217266 /* SegueIdentifiers.swift */,
 				177C71F11BA5F1A900720577 /* UIViewController+ContentViewController.swift */,
 				17D7F1CC1BB301AB003707BA /* UIFont+AvenirContentSize.swift */,
+				1790FCFE1BB4762400C2A21E /* Array+AtIndex.swift */,
+				1790FD041BB47E5C00C2A21E /* BaseTableViewController.swift */,
 			);
 			name = application;
 			sourceTree = "<group>";
@@ -387,11 +396,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1790FD051BB47E5C00C2A21E /* BaseTableViewController.swift in Sources */,
 				171B07AB1B926C1800217266 /* SegueIdentifiers.swift in Sources */,
 				1764B1E41BAB32A1008061A6 /* RequirementTableViewCell.swift in Sources */,
 				171B07A91B926B3000217266 /* ChallengeRulesAndStages.swift in Sources */,
 				1764C3881BA09AE400D2A2AC /* FileManager.swift in Sources */,
 				17B367311B93E77500FFD061 /* UserDefaults.swift in Sources */,
+				1790FCFF1BB4762400C2A21E /* Array+AtIndex.swift in Sources */,
 				17B367331B93E79F00FFD061 /* XCGLogger.swift in Sources */,
 				171B077B1B92642500217266 /* AppDelegate.swift in Sources */,
 				17B9575A1B955810003334DB /* AgeDetailsRequirementsTableViewController.swift in Sources */,
@@ -401,6 +412,7 @@
 				17159B731BAF45F600E71174 /* RulesViewController.swift in Sources */,
 				17159B751BAF48FB00E71174 /* RuleTableViewCell.swift in Sources */,
 				17B367271B93E2F100FFD061 /* AgeDetailsViewController.swift in Sources */,
+				1790FD031BB4786300C2A21E /* Rule.swift in Sources */,
 				17D7F1D11BB316DD003707BA /* HowToPlayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
