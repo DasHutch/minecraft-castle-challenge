@@ -19,10 +19,6 @@ class HowToPlayViewController: UIViewController {
     var csdcObserver: NSObjectProtocol?
 
     //MARK: - Lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -40,10 +36,6 @@ class HowToPlayViewController: UIViewController {
         if csdcObserver != nil {
             NSNotificationCenter.defaultCenter().removeObserver(csdcObserver!)
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     //MARK: - Private 
