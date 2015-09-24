@@ -58,8 +58,8 @@ struct CastleChallengeKeys {
 }
 
 enum ChallengeStageRequirements: Int, CustomStringConvertible {
-    case Materials = 0
-    case Construction
+    case Construction = 0
+    case Materials
     case Treasure
     
     var description: String {
