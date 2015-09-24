@@ -10,12 +10,13 @@ import UIKit
 
 let RuleCellIdentifier: String = "rule_cell_identifier"
 
-class RulesViewController: UITableViewController {
+class RulesViewController: BaseTableViewController {
     
-    //NOTE: All PLIST Data
+    //TODO: Refactor to DataManager Class
     var plistDict: NSMutableDictionary?
-    var rules: NSArray?
     
+    lazy var rules = [Rule]()
+
     var csdcObserver: NSObjectProtocol?
 
     // MARK: - Lifecycle
@@ -30,7 +31,7 @@ class RulesViewController: UITableViewController {
         
         csdcObserver = NSNotificationCenter.defaultCenter().addObserverForName(UIContentSizeCategoryDidChangeNotification, object: nil, queue: nil) { (notification) -> Void in
             
-            self.tableView.reloadData()
+            self.reloadTableViewData()
         }
         
         configTableView()
@@ -39,7 +40,7 @@ class RulesViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        configTableViewData()
+        reloadTableViewData()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -50,16 +51,13 @@ class RulesViewController: UITableViewController {
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {}
     
     // MARK: - Private
     private func configRulesData() {
         
+        //TODO: Refactor to DataManager Class
         let path = FileManager.defaultManager.challengeProgressPLIST()
         plistDict = NSMutableDictionary(contentsOfFile: path)
         if plistDict != nil {
@@ -67,8 +65,17 @@ class RulesViewController: UITableViewController {
             let rules = plistDict!["rules"] as? NSArray
             if rules != nil {
                 
-                //NOTE: Using self to be clear in my intention to set local `rules` to class var `rules`
-                self.rules = rules
+                for rule in rules! {
+                    if let ruleString = rule as? String {
+                        
+                        //NOTE: Using self since class and local have same var name
+                        //      could change it but i mean its semantic and self doesnt hurt anyone
+                        self.rules.append(Rule(description: ruleString))
+
+                    }else {
+                        log.warning("Rule is not a string, unable to add it to our Rules array: \(rule)")
+                    }
+                }
                 
                 log.verbose("Config'd Data for Rules from PLIST")
             }else {
@@ -81,90 +88,53 @@ class RulesViewController: UITableViewController {
     
     private func configTableView() {
         
-        tableView.estimatedRowHeight = 44.0//tableView.rowHeight
+        //????: Seems that setting this from the tableView.rowHeight as exists
+        //      in storyboard doesn't actually trigger Autolayout / Self Sizing
+        tableView.estimatedRowHeight = 44.0 //tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
         
         tableView.separatorInset = UIEdgeInsetsZero
     }
     
-    private func configTableViewData() {
+    private func reloadTableViewData() {
         tableView.reloadData()
     }
 }
 
 // MARK: - UITableViewDelegate
-extension RulesViewController {
-    
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-        //NOTE: Cell UI updates
-        fixCellSeparatorInsets(cell)
-    }
-    
-    //MARK: Helpers
-    private func fixCellSeparatorInsets(cell: UITableViewCell) {
-        
-        let separatorInsetSelector = Selector("separatorInset")
-        if cell.respondsToSelector(separatorInsetSelector) {
-            cell.separatorInset = UIEdgeInsetsZero
-        }
-        
-        let preservesSuperviewLayoutMarginsSelector = Selector("preservesSuperviewLayoutMargins")
-        if cell.respondsToSelector(preservesSuperviewLayoutMarginsSelector) {
-            cell.preservesSuperviewLayoutMargins = false
-        }
-        
-        let layoutMarginsSelector = Selector("layoutMargins")
-        if cell.respondsToSelector(layoutMarginsSelector) {
-            cell.layoutMargins = UIEdgeInsetsZero
-        }
-    }
-}
+extension RulesViewController {}
 
 // MARK: - UITableViewDataSource
 extension RulesViewController {
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        
-        var sections = 0
-        if rules != nil {
-            sections = 1
-        }
-        
-        return sections
+        return rules.count > 1 ? 1 : 0
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        let rows = rules?.count ?? 0
-        return rows
+        return rules.count ?? 0
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell: RuleTableViewCell = (tableView.dequeueReusableCellWithIdentifier(RuleCellIdentifier, forIndexPath: indexPath) as? RuleTableViewCell)!
         
+        //TODO: Refactor to DataManager Class
         let rule = ruleForIndexPath(indexPath)
-        cell.loadRule(rule, withIndex: indexPath.row)
+        cell.viewData = RuleTableViewCell.ViewData(rule: rule, withIndex: indexPath.row)
         
         return cell
     }
     
     //MARK: Helpers
-    private func ruleForIndexPath(indexPath: NSIndexPath) -> String {
-        
-        var rule = ""
-        
-        guard let challenegeRules = rules else {
-            log.error("Rules Data is missing")
-            return rule
-        }
-        
-        //????: Do I have to check for bounds if wrapped with `if let`
-        if let theRule = challenegeRules.objectAtIndex(indexPath.row) as? String {
-            rule = theRule
-        }
     
-        return rule
+    //????: Perhaps make this optional...
+    private func ruleForIndexPath(indexPath: NSIndexPath) -> Rule {
+
+        if let theRule = rules.atIndex(indexPath.row) {
+            return theRule
+        }else {
+            return Rule(description: "")
+        }
     }
 }

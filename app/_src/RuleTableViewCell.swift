@@ -13,6 +13,20 @@ class RuleTableViewCell: UITableViewCell {
     @IBOutlet weak var ruleLabel: UILabel!
     @IBOutlet weak var indexLabel: UILabel!
     
+    struct ViewData {
+        let rule: Rule
+        let index: Int
+    }
+    
+    var viewData: ViewData? {
+        didSet{
+            updateRuleLabel(viewData?.rule.description)
+            updateRuleIndexLabel(viewData?.index)
+            
+            updateLabelFontForDynamicTextStyles()
+        }
+    }
+    
     //MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,20 +41,12 @@ class RuleTableViewCell: UITableViewCell {
         //NOTE: Clear Label, Etc
         updateRuleLabel(nil)
         updateRuleIndexLabel(nil)
+        
+        updateLabelFontForDynamicTextStyles()
     }
     
     //MARK: - Public
-    func loadRule(rule: String, withIndex index: Int) {
-        
-        updateRuleLabel(rule)
-        ruleLabel.font =  UIFont.preferredAvenirFontForTextStyle(UIFontTextStyleHeadline)
-            //UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
-        
-        updateRuleIndexLabel(index)
-        indexLabel.font =  UIFont.preferredAvenirFontForTextStyle(UIFontTextStyleBody)
-            //UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
-    }
-    
+
     //MARK: - Private
     private func updateRuleLabel(rule: String?) {
         updateLabel(ruleLabel, withText: rule)
@@ -59,5 +65,17 @@ class RuleTableViewCell: UITableViewCell {
     
     private func updateLabel(label: UILabel?, withText text: String?) {
         label?.text = text
+    }
+    
+    private func updateLabelFontForDynamicTextStyles() {
+        ruleLabel.font =  UIFont.preferredAvenirFontForTextStyle(UIFontTextStyleHeadline)
+        indexLabel.font =  UIFont.preferredAvenirFontForTextStyle(UIFontTextStyleBody)
+    }
+}
+
+extension RuleTableViewCell.ViewData {
+    init(rule: Rule, withIndex index: Int) {
+        self.rule = rule
+        self.index = index
     }
 }
