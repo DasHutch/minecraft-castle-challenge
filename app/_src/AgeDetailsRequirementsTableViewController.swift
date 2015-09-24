@@ -10,7 +10,7 @@ import UIKit
 
 let RequirementCellIdentifier: String = "requirement_cell_identifier"
 
-class AgeDetailsRequirementsTableViewController: UITableViewController {
+class AgeDetailsRequirementsTableViewController: BaseTableViewController {
     
     var selectedCells = [NSIndexPath]()
         
@@ -88,7 +88,9 @@ class AgeDetailsRequirementsTableViewController: UITableViewController {
     
     private func configTableView() {
         
-        tableView.estimatedRowHeight = 44.0//tableView.rowHeight
+        //????: Seems that setting this from the tableView.rowHeight as exists
+        //      in storyboard doesn't actually trigger Autolayout / Self Sizing
+        tableView.estimatedRowHeight = 44.0 //tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
         
         tableView.separatorInset = UIEdgeInsetsZero
@@ -107,6 +109,12 @@ extension AgeDetailsRequirementsTableViewController {
         var sections = 0
         if requirement != nil {
             sections = 1
+            //TODO: Handle Additional Requirements for Construction
+//            switch requirement! {
+//            case ChallengeStageRequirements.Construction:
+//                sections = 2
+//            default: break
+//            }
         }
         
         //TODO: Add Section for Additional Construction Reqs
@@ -124,13 +132,19 @@ extension AgeDetailsRequirementsTableViewController {
         
         let cell: RequirementTableViewCell = (tableView.dequeueReusableCellWithIdentifier(RequirementCellIdentifier, forIndexPath: indexPath) as? RequirementTableViewCell)!
         
-        let req = requirementForIndexPath(indexPath)
-        cell.loadRequirement(req)
+        //TODO: Refactor to DataManager Class
+        let (req, _) = requirementForIndexPath(indexPath)
+        
+        if req != nil {
+            cell.viewData = RequirementTableViewCell.ViewData(requirement: req!)
+        }
         
         return cell
     }
     
     //MARK: Private
+    
+    //TODO: Refactor to DataManager Class
     private func rowsForCurrentRequirementsType() -> Int {
         
         var rows = 0
@@ -156,9 +170,9 @@ extension AgeDetailsRequirementsTableViewController {
                 }
                 
                 //TODO: Handle Additional Construction Requirements?
-//                if let constructionReqs = reqs[CastleChallengeKeys.RequirementsTypeKeys.ConstructionAdditional] as? NSMutableArray {
-//                    rows = constructionReqs.count
-//                }
+                if let constructionReqs = reqs[CastleChallengeKeys.RequirementsTypeKeys.ConstructionAdditional] as? NSMutableArray {
+                    rows = constructionReqs.count
+                }
                 
             case ChallengeStageRequirements.Materials:
             
@@ -177,65 +191,65 @@ extension AgeDetailsRequirementsTableViewController {
         return rows
     }
     
-    private func requirementForIndexPath(indexPath: NSIndexPath) -> NSDictionary {
+    private func requirementForIndexPath(indexPath: NSIndexPath) -> (requirement: Requirement?, dictionary: NSMutableDictionary?) {
         
-        var dict = NSDictionary()
+        var requirementDictionary =  NSMutableDictionary()
         
         if requirement != nil {
             
             guard let data = reqDict else {
                 log.error("Data is missing")
-                return dict
+                return (nil, nil)
             }
             
             guard let reqs = data[CastleChallengeKeys.Requirements] as? NSMutableDictionary else {
                 log.error("Requirment data is nil, possibly not set yet")
-                return dict
+                return (nil, nil)
             }
             
             switch(requirement!) {
             case ChallengeStageRequirements.Construction:
                 
+                //????: Do I need mutable? I dont think so.
                 if let constructionReqs = reqs[CastleChallengeKeys.RequirementsTypeKeys.Construction] as? NSMutableArray {
-                    
-                    //????: Do I have to check for bounds if wrapped with `if let`
-                    if let req = constructionReqs.objectAtIndex(indexPath.row) as? NSMutableDictionary {
-                        dict = req
+                    if let req = constructionReqs.atIndex(indexPath.row) as? NSMutableDictionary {
+                        requirementDictionary = req
                     }
                 }
                 
                 //TODO: Handle Additional Construction Requirements?
-//                if let constructionReqs = reqs[CastleChallengeKeys.RequirementsTypeKeys.Construction] as? NSMutableArray {
-//                    
-//                    //????: Do I have to check for bounds if wrapped with `if let`
-//                    if let req = constructionReqs.objectAtIndex(indexPath.row) as? NSMutableDictionary {
-//                        dict = req
-//                    }
-//                }
+                if let constructionReqs = reqs[CastleChallengeKeys.RequirementsTypeKeys.Construction] as? NSMutableArray {
+                    if let req = constructionReqs.atIndex(indexPath.row) as? NSMutableDictionary {
+                        requirementDictionary = req
+                    }
+                }
                 
             case ChallengeStageRequirements.Materials:
                 
+                //????: Do I need mutable? I dont think so.
                 if let materialsReqs = reqs[CastleChallengeKeys.RequirementsTypeKeys.Materials] as? NSMutableArray {
-                    
-                    //????: Do I have to check for bounds if wrapped with `if let`
-                    if let req = materialsReqs.objectAtIndex(indexPath.row) as? NSMutableDictionary {
-                        dict = req
+                    if let req = materialsReqs.atIndex(indexPath.row) as? NSMutableDictionary {
+                        requirementDictionary = req
                     }
                 }
                 
             case ChallengeStageRequirements.Treasure:
                 
+                //????: Do I need mutable? I dont think so.
                 if let treasureReqs = reqs[CastleChallengeKeys.RequirementsTypeKeys.Treasure] as? NSMutableArray {
-                    
-                    //????: Do I have to check for bounds if wrapped with `if let`
-                    if let req = treasureReqs.objectAtIndex(indexPath.row) as? NSMutableDictionary {
-                        dict = req
+                    if let req = treasureReqs.atIndex(indexPath.row) as? NSMutableDictionary {
+                        requirementDictionary = req
                     }
                 }
             }
         }
         
-        return dict
+        //TODO: Refactor to DataManager Class
+        let quantity = requirementDictionary[CastleChallengeKeys.StageRequriementItemKeys.Quantity] as? NSNumber ?? 0
+        let item = requirementDictionary[CastleChallengeKeys.StageRequriementItemKeys.Item] as? String ?? ""
+        let completed = requirementDictionary[CastleChallengeKeys.StageRequriementItemKeys.Completed] as? Bool ?? false
+        
+        return (requirement: Requirement(description: item, quantity: Int(quantity), completed: completed), dictionary: requirementDictionary)
     }
     
     private func saveRequirementsData() {
@@ -250,22 +264,19 @@ extension AgeDetailsRequirementsTableViewController {
 
 // MARK: - UITableViewDelegate
 extension AgeDetailsRequirementsTableViewController {
-    
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-        //NOTE: Cell UI updates
-        fixCellSeparatorInsets(cell)
-    }
-    
+
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         if selectedCells.contains(indexPath) {
         
+            //TODO: Refactor to DataManager Class
             if plistDict != nil && reqDict != nil && stage != nil && requirement != nil {
-                if let req = requirementForIndexPath(indexPath) as? NSMutableDictionary {
-                    req[CastleChallengeKeys.StageRequriementItemKeys.Completed] = false
+                let (_, dict) = requirementForIndexPath(indexPath)
+                
+                if dict != nil {
+                    dict![CastleChallengeKeys.StageRequriementItemKeys.Completed] = false
                     saveRequirementsData()
                     
                     if let index = selectedCells.indexOf(indexPath) {
@@ -275,9 +286,12 @@ extension AgeDetailsRequirementsTableViewController {
             }
         }else {
             
+            //TODO: Refactor to DataManager Class
             if plistDict != nil && reqDict != nil && stage != nil && requirement != nil {
-                if let req = requirementForIndexPath(indexPath) as? NSMutableDictionary {
-                    req[CastleChallengeKeys.StageRequriementItemKeys.Completed] = true
+                let (_, dict) = requirementForIndexPath(indexPath)
+
+                if dict != nil {
+                    dict![CastleChallengeKeys.StageRequriementItemKeys.Completed] = true
                     saveRequirementsData()
                     
                     selectedCells.append(indexPath)
@@ -286,24 +300,5 @@ extension AgeDetailsRequirementsTableViewController {
         }
         
         tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    }
-    
-    //MARK: Helpers
-    private func fixCellSeparatorInsets(cell: UITableViewCell) {
-        
-        let separatorInsetSelector = Selector("separatorInset")
-        if cell.respondsToSelector(separatorInsetSelector) {
-            cell.separatorInset = UIEdgeInsetsZero
-        }
-        
-        let preservesSuperviewLayoutMarginsSelector = Selector("preservesSuperviewLayoutMargins")
-        if cell.respondsToSelector(preservesSuperviewLayoutMarginsSelector) {
-            cell.preservesSuperviewLayoutMargins = false
-        }
-        
-        let layoutMarginsSelector = Selector("layoutMargins")
-        if cell.respondsToSelector(layoutMarginsSelector) {
-            cell.layoutMargins = UIEdgeInsetsZero
-        }
     }
 }

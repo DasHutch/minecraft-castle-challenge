@@ -13,6 +13,21 @@ class RequirementTableViewCell: UITableViewCell {
     @IBOutlet weak var itemLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
     
+    struct ViewData {
+        let requirement: Requirement
+    }
+    
+    var viewData: ViewData? {
+        didSet {
+            
+            updateItemLabel(viewData?.requirement.description)
+            updateQuantityLabel(viewData?.requirement.quantity)
+            accessoryTypeForCompleted(viewData?.requirement.completed ?? false)
+            
+            updateLabelFontForDynamicTextStyles()
+        }
+    }
+    
     //MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,10 +56,6 @@ class RequirementTableViewCell: UITableViewCell {
         updateQuantityLabel(quantity)
         accessoryTypeForCompleted(completed)
         
-        quantityLabel.font = UIFont.preferredAvenirFontForTextStyle(UIFontTextStyleHeadline)
-            //UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
-        itemLabel.font = UIFont.preferredAvenirFontForTextStyle(UIFontTextStyleBody)
-            //UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
     }
     
     //MARK: - Private
@@ -58,7 +69,6 @@ class RequirementTableViewCell: UITableViewCell {
     }
     
     private func updateItemLabel(itemName: String?) {
-        
         updateLabel(itemLabel, withText: itemName)
     }
     
@@ -80,7 +90,17 @@ class RequirementTableViewCell: UITableViewCell {
     }
     
     private func updateLabel(label: UILabel?, withText text: String?) {
-        
         label?.text = text
     }
+    
+    private func updateLabelFontForDynamicTextStyles() {
+        quantityLabel.font =  UIFont.preferredAvenirFontForTextStyle(UIFontTextStyleHeadline)
+        itemLabel.font =  UIFont.preferredAvenirFontForTextStyle(UIFontTextStyleBody)
+    }
+}
+
+extension RequirementTableViewCell.ViewData {
+//    init(requirement: Requirement) {
+//        self.requirement = requirement
+//    }
 }
