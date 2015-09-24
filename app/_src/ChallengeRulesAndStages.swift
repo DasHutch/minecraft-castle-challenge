@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChallengeRulesAndStages: UITableViewController {
+class ChallengeRulesAndStages: BaseTableViewController {
     
     @IBOutlet weak var objectiveAndPlotStaticCellLabel: UILabel!
     @IBOutlet weak var rulesStaticCellLabel: UILabel!
@@ -76,7 +76,9 @@ class ChallengeRulesAndStages: UITableViewController {
     // MARK: - Private
     private func configTableView() {
         
-        tableView.estimatedRowHeight = 44.0//tableView.rowHeight
+        //????: Seems that setting this from the tableView.rowHeight as exists
+        //      in storyboard doesn't actually trigger Autolayout / Self Sizing
+        tableView.estimatedRowHeight = 44.0 //tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
 
         tableView.separatorInset = UIEdgeInsetsZero
