@@ -24,36 +24,23 @@ class ChallengeRulesAndStages: BaseTableViewController {
     }
     
     var selectedStage: ChallengeStages?
-    var csdcObserver: NSObjectProtocol?
     
-    //MARK: - Lifecycle
+//MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configTableView()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        csdcObserver = NSNotificationCenter.defaultCenter().addObserverForName(UIContentSizeCategoryDidChangeNotification, object: nil, queue: nil) { (notification) -> Void in
-            
-            self.updateUI()
-            self.tableView.reloadData()
-        }
-        
         updateUI()
     }
 
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        if csdcObserver != nil {
-            NSNotificationCenter.defaultCenter().removeObserver(csdcObserver!)
-        }
+    override func contentSizeDidChange(newUIContentSizeCategoryNewValueKey: String) {
+        updateUI()
     }
-    
-    //MARK: - Navigation
+
+//MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     
         if segue.identifier == SegueIdentifiers.showAge {
@@ -73,9 +60,8 @@ class ChallengeRulesAndStages: BaseTableViewController {
         }
     }
     
-    // MARK: - Private
+// MARK: - Private
     private func configTableView() {
-        
         //????: Seems that setting this from the tableView.rowHeight as exists
         //      in storyboard doesn't actually trigger Autolayout / Self Sizing
         tableView.estimatedRowHeight = 44.0 //tableView.rowHeight
@@ -83,9 +69,8 @@ class ChallengeRulesAndStages: BaseTableViewController {
 
         tableView.separatorInset = UIEdgeInsetsZero
     }
-    
+
     private func updateUI() {
-       
         objectiveAndPlotStaticCellLabel.font = UIFont.preferredAvenirFontForTextStyle(UIFontTextStyleTitle2)
         rulesStaticCellLabel.font = UIFont.preferredAvenirFontForTextStyle(UIFontTextStyleTitle2)
         woodenAgeStaticCellLabel.font = UIFont.preferredAvenirFontForTextStyle(UIFontTextStyleTitle2)
@@ -100,45 +85,29 @@ class ChallengeRulesAndStages: BaseTableViewController {
 extension ChallengeRulesAndStages {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
         guard let cell = tableView.cellForRowAtIndexPath(indexPath) else {
             log.severe("No Cell available for IndexPath: \(indexPath)")
             return
         }
         
         if indexPath.section == ChallengeRulesAndStagesTableViewSections.HowToPlay {
-            
             //NOTE: Let the Segue in Storyboard do its thing...
-            
         }else if indexPath.section == ChallengeRulesAndStagesTableViewSections.Stages  {
             
             switch(indexPath.row) {
-    
                 case ChallengeStages.WoodenAge.rawValue:
-                    
                     selectedStage = .WoodenAge
-                
                 case ChallengeStages.StoneAge.rawValue:
-                
                     selectedStage = .StoneAge
-                
                 case ChallengeStages.IronAge.rawValue:
-                
                     selectedStage = .IronAge
-                
                 case ChallengeStages.GoldAge.rawValue:
-                
                     selectedStage = .GoldAge
-                
                 case ChallengeStages.DiamondAge.rawValue:
-                
                     selectedStage = .DiamondAge
-                
                 default:
-                    
                     log.warning("Attempting to select unknown stage for IndexPath: \(indexPath)")
                     selectedStage = nil
-                    
                 break
             }
             
