@@ -8,20 +8,22 @@
 
 import UIKit
 
-class BaseTableViewController: UITableViewController {
-
-}
+class BaseTableViewController: ContentSizeChangeObservingTableViewController {}
 
 // MARK: - UITableViewDelegate
 extension BaseTableViewController {
-    
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         fixCellSeparatorInsets(cell)
     }
     
-    //MARK: Helpers
+//MARK: Helpers
+    /**
+     Fixes UITableViewCell Separator Inset
+     
+     will set `separatorInset` & `layoutMargins` to `UIEdgeInsetsZero` and turn off
+     `preservesSuperviewLayoutMargins`
+    */
     private func fixCellSeparatorInsets(cell: UITableViewCell) {
-        
         let separatorInsetSelector = Selector("separatorInset")
         if cell.respondsToSelector(separatorInsetSelector) {
             cell.separatorInset = UIEdgeInsetsZero
@@ -31,7 +33,7 @@ extension BaseTableViewController {
         if cell.respondsToSelector(preservesSuperviewLayoutMarginsSelector) {
             cell.preservesSuperviewLayoutMargins = false
         }
-        
+
         let layoutMarginsSelector = Selector("layoutMargins")
         if cell.respondsToSelector(layoutMarginsSelector) {
             cell.layoutMargins = UIEdgeInsetsZero
