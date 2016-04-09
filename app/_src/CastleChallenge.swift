@@ -6,13 +6,6 @@
 //  Copyright © 2015 Gregory Hutchinson. All rights reserved.
 //
 
-struct CastleChallengeFiles {
-    struct DefaultData {
-        static let FileName = "CastleChallenge"
-        static let FileExtension = "plist"
-    }
-}
-
 enum ChallengeStages: Int, CustomStringConvertible {
     case WoodenAge = 0
     case StoneAge
