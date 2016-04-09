@@ -14,47 +14,32 @@ class RulesViewController: BaseTableViewController {
     
     //TODO: Refactor to DataManager Class
     var plistDict: NSMutableDictionary?
-    
     lazy var rules = [Rule]()
 
-    var csdcObserver: NSObjectProtocol?
-
-    // MARK: - Lifecycle
+// MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configRulesData()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        csdcObserver = NSNotificationCenter.defaultCenter().addObserverForName(UIContentSizeCategoryDidChangeNotification, object: nil, queue: nil) { (notification) -> Void in
-            
-            self.reloadTableViewData()
-        }
-        
         configTableView()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
         reloadTableViewData()
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        if csdcObserver != nil {
-            NSNotificationCenter.defaultCenter().removeObserver(csdcObserver!)
-        }
+    override func contentSizeDidChange(newUIContentSizeCategoryNewValueKey: String) {
+        reloadTableViewData()
     }
 
-    // MARK: - Navigation
+// MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {}
     
-    // MARK: - Private
+// MARK: - Private
     private func configRulesData() {
         
         //TODO: Refactor to DataManager Class

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AgeDetailsViewController: UIViewController {
+class AgeDetailsViewController: BaseViewController {
     
     private struct StageIcons {
         static let woodenAgeIcon = UIImage(named: "wood-block-icon")
@@ -37,10 +37,8 @@ class AgeDetailsViewController: UIViewController {
     //NOTE: All PLIST Data
     var plistDict: NSMutableDictionary?
     var reqArray: NSArray?
-    
-    var csdcObserver: NSObjectProtocol?
 
-    //MARK: - Lifecycle
+//MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         updateAgeIcon()
@@ -48,24 +46,13 @@ class AgeDetailsViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         //NOTE: Config General Req's Data
         configData()
-        
         updateUI()
-        
-        csdcObserver = NSNotificationCenter.defaultCenter().addObserverForName(UIContentSizeCategoryDidChangeNotification, object: nil, queue: nil) { (notification) -> Void in
-            
-            self.updateUI()
-        }
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        if csdcObserver != nil {
-            NSNotificationCenter.defaultCenter().removeObserver(csdcObserver!)
-        }
+    override func contentSizeDidChange(newUIContentSizeCategoryNewValueKey: String) {
+        updateUI()
     }
 
     //MARK: IBActions
@@ -89,7 +76,7 @@ class AgeDetailsViewController: UIViewController {
         }
     }
     
-    //MARK: - Private
+//MARK: - Private
     
     //TODO: Refactor to DataManager Class
     private func configData() {

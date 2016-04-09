@@ -28,22 +28,10 @@ class AgeDetailsRequirementsTableViewController: BaseTableViewController {
             configTableViewData()
         }
     }
-    
-    var csdcObserver: NSObjectProtocol?
 
-    // MARK: - Lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
+// MARK: - Lifecycle
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        csdcObserver = NSNotificationCenter.defaultCenter().addObserverForName(UIContentSizeCategoryDidChangeNotification, object: nil, queue: nil) { (notification) -> Void in
-            
-            self.tableView.reloadData()
-        }
-        
         //NOTE: Only get data from plist directly
         //      if it is currently nil here.
         if reqDict == nil {
@@ -52,18 +40,14 @@ class AgeDetailsRequirementsTableViewController: BaseTableViewController {
         
         configTableView()
     }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        if csdcObserver != nil {
-            NSNotificationCenter.defaultCenter().removeObserver(csdcObserver!)
-        }
-    }
 
     override func didMoveToParentViewController(parent: UIViewController?) {}
 
-    // MARK: - Private
+    override func contentSizeDidChange(newUIContentSizeCategoryNewValueKey: String) {
+        self.tableView.reloadData()
+    }
+
+// MARK: - Private
     private func configStageData() {
         
         let path = FileManager.defaultManager.challengeProgressPLIST()
@@ -85,7 +69,7 @@ class AgeDetailsRequirementsTableViewController: BaseTableViewController {
             log.warning("Stage / Data from Saved PLIST is nil, unable to retrieve data.")
         }
     }
-    
+
     private func configTableView() {
         
         //????: Seems that setting this from the tableView.rowHeight as exists
