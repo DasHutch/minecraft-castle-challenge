@@ -32,7 +32,6 @@ enum ChallengeStages: Int, CustomStringConvertible {
 }
 
 struct CastleChallengeKeys {
-
     static let Stages = "ages"
     static let Requirements = "requirements"
     

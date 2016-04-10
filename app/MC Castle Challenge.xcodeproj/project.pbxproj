@@ -36,6 +36,8 @@
 		17B9575A1B955810003334DB /* AgeDetailsRequirementsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B957591B955810003334DB /* AgeDetailsRequirementsTableViewController.swift */; };
 		17D7F1CD1BB301AB003707BA /* UIFont+AvenirContentSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D7F1CC1BB301AB003707BA /* UIFont+AvenirContentSize.swift */; };
 		17D7F1D11BB316DD003707BA /* HowToPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D7F1D01BB316DD003707BA /* HowToPlayViewController.swift */; };
+		551E36E61CB9DDBA0039E7C0 /* String+Newline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551E36E51CB9DDBA0039E7C0 /* String+Newline.swift */; };
+		551E36E81CB9DEC60039E7C0 /* CastleChallengeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551E36E71CB9DEC60039E7C0 /* CastleChallengeDataManager.swift */; };
 		55CB16441CB96DAC00ED0775 /* AppDelegate+Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CB16431CB96DAC00ED0775 /* AppDelegate+Logging.swift */; };
 		55CB16461CB96E9400ED0775 /* AppDelegate+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CB16451CB96E9400ED0775 /* AppDelegate+UserDefaults.swift */; };
 		55CB16481CB96FA600ED0775 /* AppDelegate+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CB16471CB96FA600ED0775 /* AppDelegate+Setup.swift */; };
@@ -100,6 +102,8 @@
 		17B957591B955810003334DB /* AgeDetailsRequirementsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeDetailsRequirementsTableViewController.swift; sourceTree = "<group>"; };
 		17D7F1CC1BB301AB003707BA /* UIFont+AvenirContentSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+AvenirContentSize.swift"; sourceTree = "<group>"; };
 		17D7F1D01BB316DD003707BA /* HowToPlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToPlayViewController.swift; sourceTree = "<group>"; };
+		551E36E51CB9DDBA0039E7C0 /* String+Newline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Newline.swift"; sourceTree = "<group>"; };
+		551E36E71CB9DEC60039E7C0 /* CastleChallengeDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastleChallengeDataManager.swift; sourceTree = "<group>"; };
 		55CB16431CB96DAC00ED0775 /* AppDelegate+Logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Logging.swift"; sourceTree = "<group>"; };
 		55CB16451CB96E9400ED0775 /* AppDelegate+UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+UserDefaults.swift"; sourceTree = "<group>"; };
 		55CB16471CB96FA600ED0775 /* AppDelegate+Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Setup.swift"; sourceTree = "<group>"; };
@@ -276,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				177C71F41BA60A3800720577 /* CastleChallenge.swift */,
+				551E36E71CB9DEC60039E7C0 /* CastleChallengeDataManager.swift */,
 				55CB164C1CB9776400ED0775 /* CastleChallengeFiles.swift */,
 			);
 			name = models;
@@ -296,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				55CB16571CB985FC00ED0775 /* String+Empty.swift */,
+				551E36E51CB9DDBA0039E7C0 /* String+Newline.swift */,
 				177C71F11BA5F1A900720577 /* UIViewController+ContentViewController.swift */,
 				17D7F1CC1BB301AB003707BA /* UIFont+AvenirContentSize.swift */,
 				1790FCFE1BB4762400C2A21E /* Array+AtIndex.swift */,
@@ -470,11 +476,13 @@
 				171B07AB1B926C1800217266 /* SegueIdentifiers.swift in Sources */,
 				1764B1E41BAB32A1008061A6 /* RequirementTableViewCell.swift in Sources */,
 				55CB16501CB97DE100ED0775 /* TypedNotifications.swift in Sources */,
+				551E36E81CB9DEC60039E7C0 /* CastleChallengeDataManager.swift in Sources */,
 				171B07A91B926B3000217266 /* ChallengeRulesAndStages.swift in Sources */,
 				55CB165A1CB9873B00ED0775 /* BaseViewController.swift in Sources */,
 				55CB16481CB96FA600ED0775 /* AppDelegate+Setup.swift in Sources */,
 				55CB16461CB96E9400ED0775 /* AppDelegate+UserDefaults.swift in Sources */,
 				1764C3881BA09AE400D2A2AC /* FileManager.swift in Sources */,
+				551E36E61CB9DDBA0039E7C0 /* String+Newline.swift in Sources */,
 				55CB16561CB9849800ED0775 /* ContentSizeChangeObservingTableViewController.swift in Sources */,
 				17B367311B93E77500FFD061 /* UserDefaults.swift in Sources */,
 				1790FCFF1BB4762400C2A21E /* Array+AtIndex.swift in Sources */,

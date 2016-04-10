@@ -19,7 +19,7 @@ class RuleTableViewCell: UITableViewCell {
     }
     
     var viewData: ViewData? {
-        didSet{
+        didSet {
             updateRuleLabel(viewData?.rule.description)
             updateRuleIndexLabel(viewData?.index)
             
@@ -27,17 +27,12 @@ class RuleTableViewCell: UITableViewCell {
         }
     }
     
-    //MARK: - Lifecycle
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
+//MARK: - Lifecycle
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
     override func prepareForReuse() {
-        
         //NOTE: Clear Label, Etc
         updateRuleLabel(nil)
         updateRuleIndexLabel(nil)
@@ -45,15 +40,14 @@ class RuleTableViewCell: UITableViewCell {
         updateLabelFontForDynamicTextStyles()
     }
     
-    //MARK: - Public
+//MARK: - Public
 
-    //MARK: - Private
+//MARK: - Private
     private func updateRuleLabel(rule: String?) {
         updateLabel(ruleLabel, withText: rule)
     }
     
     private func updateRuleIndexLabel(ruleIndex: Int?) {
-        
         if ruleIndex >= 0 && ruleIndex != nil {
             let nonZeroBasedIndex = ruleIndex! + 1
             let ruleIndexString = "\(nonZeroBasedIndex)."
