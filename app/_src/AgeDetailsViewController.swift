@@ -17,6 +17,8 @@ class AgeDetailsViewController: BaseViewController {
         static let goldAgeIcon = UIImage(named: "gold-block-icon")
         static let diamondAgeIcon = UIImage(named: "diamond-block-icon")
     }
+
+    private let GrassBlockIcon = UIImage(named: "grass-block-icon")
     
     @IBOutlet weak var ageIconView: UIImageView!
     @IBOutlet weak var generalRequirementsHeadlineLabel: UILabel!
@@ -34,8 +36,6 @@ class AgeDetailsViewController: BaseViewController {
         }
     }
     
-    //NOTE: All PLIST Data
-    var plistDict: NSMutableDictionary?
     var reqArray: NSArray?
 
 //MARK: - Lifecycle
@@ -46,7 +46,6 @@ class AgeDetailsViewController: BaseViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        //NOTE: Config General Req's Data
         configData()
         updateUI()
     }
@@ -55,19 +54,16 @@ class AgeDetailsViewController: BaseViewController {
         updateUI()
     }
 
-    //MARK: IBActions
+//MARK: IBActions
     @IBAction func changeChecklist(sender: UISegmentedControl) {
         updateUI()
     }
     
-    //MARK: - Navigation
+//MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
         if segue.identifier == SegueIdentifiers.embedRequirementsChecklist {
             if let vc = segue.destinationViewController.contentViewController as? AgeDetailsRequirementsTableViewController {
-                
                 requirementViewController = vc
-                
             }else {
                 log.warning("Attempting to prepare \(SegueIdentifiers.embedRequirementsChecklist) segue but found an unexpected ViewController: \(segue.destinationViewController)")
             }
@@ -77,76 +73,62 @@ class AgeDetailsViewController: BaseViewController {
     }
     
 //MARK: - Private
-    
-    //TODO: Refactor to DataManager Class
     private func configData() {
-        
-        let path = FileManager.defaultManager.challengeProgressPLIST()
-        plistDict = NSMutableDictionary(contentsOfFile: path)
-        if stage != nil && plistDict != nil {
-            
-            let ageLowerCase = stage!.description.lowercaseString
-            let ages = plistDict!["ages"] as? NSMutableDictionary
-            if ages != nil {
-                
-                let age = ages![ageLowerCase] as? NSMutableDictionary
-                let ageReqs = age!["requirements"] as? NSMutableDictionary
-                guard let genReqs = ageReqs!["general"] as? NSArray else {
-                    log.error("General Requirement data is nil, possibly not set yet")
-                    return
-                }
-                
-                reqArray = genReqs
-                
-                updateGeneralRequirementsLabel()
-                
-                log.verbose("Config'd Data for Age from PLIST")
-            }else {
-                log.severe("Stage / Data from saved PLIST is missing `ages` dictionary. Possibly, a corrupt plist file?!")
+        guard let age = stage?.description.lowercaseString else {
+            log.warning("Stage is not set, unable to configure stage data")
+            return
+        }
+
+        do {
+            let ageData = try CastleChallengeDataManager().dataForAge(age)
+
+            guard let ageReqs = ageData["requirements"] as? NSMutableDictionary else {
+                log.error("Requirements data is nil")
+                return
             }
-        }else {
-            log.warning("Stage / Data from Saved PLIST is nil, unable to retrieve data.")
+
+            guard let genReqs = ageReqs["general"] as? NSArray else {
+                log.error("General Requirement data is nil")
+                return
+            }
+
+            let newline = String.newline
+            var genReqsString = String.empty
+            if let genReqsArray = genReqs as? [String] {
+                genReqsString = genReqsArray.joinWithSeparator(newline)
+                updateGeneralRequirementsLabel(genReqsString)
+            }else {
+                log.warning("General Requirements is not an array of strings")
+            }
+        }catch let error as NSError {
+            log.error("Error: \(error)")
         }
     }
     
     private func updateAgeIcon() {
-        
         guard let currentStage = stage else {
-            
             //TODO: Try to pop back, maybe pop an error
             log.severe("No Stage is set. Unable to do... anything, actually")
             return
         }
-        
-        //NOTE: Start with default Icon
-        ageIconView.image = UIImage(named: "grass-block-icon")
+
+        ageIconView.image = GrassBlockIcon
         
         switch(currentStage) {
-            
         case ChallengeStages.WoodenAge:
-            
             ageIconView.image = StageIcons.woodenAgeIcon
-            
         case ChallengeStages.StoneAge:
-            
             ageIconView.image = StageIcons.stoneAgeIcon
-            
         case ChallengeStages.IronAge:
-            
             ageIconView.image = StageIcons.ironAgeIcon
-            
         case ChallengeStages.GoldAge:
-            
             ageIconView.image = StageIcons.goldAgeIcon
-            
         case ChallengeStages.DiamondAge:
-            
             ageIconView.image = StageIcons.diamondAgeIcon
         }
     }
     
     private func updateUI() {
-        
         switch containerSegmentControl.selectedSegmentIndex {
         case ChallengeStageRequirements.Construction.rawValue:
             selectedRequirement = .Construction
@@ -166,20 +148,11 @@ class AgeDetailsViewController: BaseViewController {
         generalRequirementsLabel.font = UIFont.preferredAvenirFontForTextStyle(UIFontTextStyleBody)
     }
     
-    private func updateGeneralRequirementsLabel() {
-        
-        let newline = "\n"
-        
-        var genReqsString = ""
-        if let genReqsArray = reqArray as? [String] {
-            genReqsString = genReqsArray.joinWithSeparator(newline)
-        }
-        
-        generalRequirementsLabel.text = genReqsString
+    private func updateGeneralRequirementsLabel(text: String) {
+        generalRequirementsLabel.text = text
     }
     
     private func updateEmbeddedRequirementTableView() {
-       
         requirementViewController?.requirement = selectedRequirement
         requirementViewController?.stage = stage
     }

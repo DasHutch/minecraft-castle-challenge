@@ -41,37 +41,25 @@ class AgeDetailsRequirementsTableViewController: BaseTableViewController {
         configTableView()
     }
 
-    override func didMoveToParentViewController(parent: UIViewController?) {}
-
     override func contentSizeDidChange(newUIContentSizeCategoryNewValueKey: String) {
         self.tableView.reloadData()
     }
 
 // MARK: - Private
     private func configStageData() {
-        
-        let path = FileManager.defaultManager.challengeProgressPLIST()
-        plistDict = NSMutableDictionary(contentsOfFile: path)
-        if stage != nil && plistDict != nil {
-            
-            let ageLowerCase = stage!.description.lowercaseString
-            let ages = plistDict!["ages"] as? NSMutableDictionary
-            if ages != nil {
-                
-                let age = ages![ageLowerCase]
-                reqDict = age as? NSMutableDictionary
-                
-                log.verbose("Config'd Data for Age from PLIST")
-            }else {
-              log.severe("Stage / Data from saved PLIST is missing `ages` dictionary. Possibly, a corrupt plist file?!")
-            }
-        }else {
-            log.warning("Stage / Data from Saved PLIST is nil, unable to retrieve data.")
+        guard let age = stage?.description.lowercaseString else {
+            log.warning("Stage is not set, unable to configure stage data")
+            return
+        }
+
+        do {
+            reqDict = try CastleChallengeDataManager().dataForAge(age)
+        }catch let error as NSError {
+            log.error("Error: \(error)")
         }
     }
 
     private func configTableView() {
-        
         //????: Seems that setting this from the tableView.rowHeight as exists
         //      in storyboard doesn't actually trigger Autolayout / Self Sizing
         tableView.estimatedRowHeight = 44.0 //tableView.rowHeight
@@ -87,9 +75,7 @@ class AgeDetailsRequirementsTableViewController: BaseTableViewController {
 
 // MARK: - UITableViewDataSource
 extension AgeDetailsRequirementsTableViewController {
-    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        
         var sections = 0
         if requirement != nil {
             sections = 1
@@ -102,39 +88,31 @@ extension AgeDetailsRequirementsTableViewController {
         }
         
         //TODO: Add Section for Additional Construction Reqs
-        
         return sections
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         let rows = rowsForCurrentRequirementsType()
         return rows
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         let cell: RequirementTableViewCell = (tableView.dequeueReusableCellWithIdentifier(RequirementCellIdentifier, forIndexPath: indexPath) as? RequirementTableViewCell)!
         
         //TODO: Refactor to DataManager Class
         let (req, _) = requirementForIndexPath(indexPath)
-        
         if req != nil {
             cell.viewData = RequirementTableViewCell.ViewData(requirement: req!)
         }
-        
         return cell
     }
     
-    //MARK: Private
+//MARK: Private
     
     //TODO: Refactor to DataManager Class
     private func rowsForCurrentRequirementsType() -> Int {
-        
         var rows = 0
-        
         if requirement != nil {
-        
             guard let data = reqDict else {
                 log.error("Stage / Data is nil, possibly not set yet")
                 return rows
@@ -145,10 +123,8 @@ extension AgeDetailsRequirementsTableViewController {
                 return rows
             }
     
-            //TODO: Make Keys constants
             switch(requirement!) {
             case ChallengeStageRequirements.Construction:
-            
                 if let constructionReqs = reqs[CastleChallengeKeys.RequirementsTypeKeys.Construction] as? NSMutableArray {
                     rows = constructionReqs.count
                 }
@@ -159,28 +135,22 @@ extension AgeDetailsRequirementsTableViewController {
                 }
                 
             case ChallengeStageRequirements.Materials:
-            
                 if let materialsReqs = reqs[CastleChallengeKeys.RequirementsTypeKeys.Materials] as? NSMutableArray {
                     rows = materialsReqs.count
                 }
             
             case ChallengeStageRequirements.Treasure:
-            
                 if let treasureReqs = reqs[CastleChallengeKeys.RequirementsTypeKeys.Treasure] as? NSMutableArray {
                     rows = treasureReqs.count
                 }
             }
         }
-
         return rows
     }
     
     private func requirementForIndexPath(indexPath: NSIndexPath) -> (requirement: Requirement?, dictionary: NSMutableDictionary?) {
-        
         var requirementDictionary =  NSMutableDictionary()
-        
         if requirement != nil {
-            
             guard let data = reqDict else {
                 log.error("Data is missing")
                 return (nil, nil)
@@ -193,7 +163,6 @@ extension AgeDetailsRequirementsTableViewController {
             
             switch(requirement!) {
             case ChallengeStageRequirements.Construction:
-                
                 //????: Do I need mutable? I dont think so.
                 if let constructionReqs = reqs[CastleChallengeKeys.RequirementsTypeKeys.Construction] as? NSMutableArray {
                     if let req = constructionReqs.atIndex(indexPath.row) as? NSMutableDictionary {
@@ -209,7 +178,6 @@ extension AgeDetailsRequirementsTableViewController {
                 }
                 
             case ChallengeStageRequirements.Materials:
-                
                 //????: Do I need mutable? I dont think so.
                 if let materialsReqs = reqs[CastleChallengeKeys.RequirementsTypeKeys.Materials] as? NSMutableArray {
                     if let req = materialsReqs.atIndex(indexPath.row) as? NSMutableDictionary {
@@ -218,7 +186,6 @@ extension AgeDetailsRequirementsTableViewController {
                 }
                 
             case ChallengeStageRequirements.Treasure:
-                
                 //????: Do I need mutable? I dont think so.
                 if let treasureReqs = reqs[CastleChallengeKeys.RequirementsTypeKeys.Treasure] as? NSMutableArray {
                     if let req = treasureReqs.atIndex(indexPath.row) as? NSMutableDictionary {
@@ -235,9 +202,9 @@ extension AgeDetailsRequirementsTableViewController {
         
         return (requirement: Requirement(description: item, quantity: Int(quantity), completed: completed), dictionary: requirementDictionary)
     }
-    
+
+    //TODO: Refactor to DataManager Class
     private func saveRequirementsData() {
-        
         if plistDict != nil {
             FileManager.defaultManager.saveChallengeProgressPLIST(plistDict!)
         }else {
@@ -248,41 +215,31 @@ extension AgeDetailsRequirementsTableViewController {
 
 // MARK: - UITableViewDelegate
 extension AgeDetailsRequirementsTableViewController {
-
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
         if selectedCells.contains(indexPath) {
-        
             //TODO: Refactor to DataManager Class
             if plistDict != nil && reqDict != nil && stage != nil && requirement != nil {
                 let (_, dict) = requirementForIndexPath(indexPath)
-                
                 if dict != nil {
                     dict![CastleChallengeKeys.StageRequriementItemKeys.Completed] = false
                     saveRequirementsData()
-                    
                     if let index = selectedCells.indexOf(indexPath) {
                         selectedCells.removeAtIndex(index)
                     }
                 }
             }
         }else {
-            
             //TODO: Refactor to DataManager Class
             if plistDict != nil && reqDict != nil && stage != nil && requirement != nil {
                 let (_, dict) = requirementForIndexPath(indexPath)
-
                 if dict != nil {
                     dict![CastleChallengeKeys.StageRequriementItemKeys.Completed] = true
                     saveRequirementsData()
-                    
                     selectedCells.append(indexPath)
                 }
             }
         }
-        
         tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
     }
 }
