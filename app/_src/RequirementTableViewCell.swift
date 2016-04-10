@@ -19,7 +19,6 @@ class RequirementTableViewCell: UITableViewCell {
     
     var viewData: ViewData? {
         didSet {
-            
             updateItemLabel(viewData?.requirement.description)
             updateQuantityLabel(viewData?.requirement.quantity)
             accessoryTypeForCompleted(viewData?.requirement.completed ?? false)
@@ -28,26 +27,20 @@ class RequirementTableViewCell: UITableViewCell {
         }
     }
     
-    //MARK: - Lifecycle
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
+//MARK: - Lifecycle
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
     override func prepareForReuse() {
-        
         //NOTE: Clear Labels & Checkmarks
         updateItemLabel(nil)
         updateQuantityLabel(nil)
         accessoryTypeForCompleted(false)
     }
 
-    //MARK: - Public
+//MARK: - Public
     func loadRequirement(req: NSDictionary) {
-        
         let quantity = req[CastleChallengeKeys.StageRequriementItemKeys.Quantity] as? NSNumber
         let item = req[CastleChallengeKeys.StageRequriementItemKeys.Item] as? String ?? ""
         let completed = req[CastleChallengeKeys.StageRequriementItemKeys.Completed] as? Bool ?? false
@@ -58,9 +51,8 @@ class RequirementTableViewCell: UITableViewCell {
         
     }
     
-    //MARK: - Private
+//MARK: - Private
     private func accessoryTypeForCompleted(completed: Bool) {
-        
         if completed {
             accessoryType = UITableViewCellAccessoryType.Checkmark
         }else {
@@ -73,9 +65,7 @@ class RequirementTableViewCell: UITableViewCell {
     }
     
     private func updateQuantityLabel(quantity: NSNumber?) {
-        
         guard let quantity = quantity as? Int else {
-            
             updateLabel(quantityLabel, withText: "")
             return
         }
@@ -83,7 +73,6 @@ class RequirementTableViewCell: UITableViewCell {
         if quantity > 0 {
             let quantityString = "\(quantity)"
             updateLabel(quantityLabel, withText: quantityString)
-            
         }else {
             updateLabel(quantityLabel, withText: "")
         }
