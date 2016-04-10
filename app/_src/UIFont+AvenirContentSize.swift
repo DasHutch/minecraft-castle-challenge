@@ -8,12 +8,10 @@
 
 import UIKit
 
-/** AvenirContentSize Extends UIFont
-
+/** 
+ AvenirContentSize Extends UIFont
 */
 extension UIFont {
-    
-    //TODO: Handle Accessability Sizes...
     class func preferredAvenirFontForTextStyle(textStyle: String) -> UIFont {
         
         var fontSize: CGFloat = 16.0
@@ -120,6 +118,76 @@ extension UIFont {
                     UIFontTextStyleCaption1 : -1,
                     UIFontTextStyleCaption2 : -2,
                     UIFontTextStyleFootnote : 0
+                ],
+
+                UIContentSizeCategoryAccessibilityMedium :
+                [
+                    UIFontTextStyleTitle1: 0,
+                    UIFontTextStyleTitle2: 0,
+                    UIFontTextStyleTitle3: 0,
+                    UIFontTextStyleHeadline : 0,
+                    UIFontTextStyleSubheadline : -2,
+                    UIFontTextStyleBody : 0,
+                    UIFontTextStyleCallout : -5,
+                    UIFontTextStyleCaption1 : -5,
+                    UIFontTextStyleCaption2 : -5,
+                    UIFontTextStyleFootnote : -4
+                ],
+
+                UIContentSizeCategoryAccessibilityLarge :
+                [
+                    UIFontTextStyleTitle1: 1,
+                    UIFontTextStyleTitle2: 1,
+                    UIFontTextStyleTitle3: 1,
+                    UIFontTextStyleHeadline : 1,
+                    UIFontTextStyleSubheadline : -1,
+                    UIFontTextStyleBody : 1,
+                    UIFontTextStyleCallout : -4,
+                    UIFontTextStyleCaption1 : -4,
+                    UIFontTextStyleCaption2 : -5,
+                    UIFontTextStyleFootnote : -3
+                ],
+
+                UIContentSizeCategoryAccessibilityExtraLarge :
+                [
+                    UIFontTextStyleTitle1: 2,
+                    UIFontTextStyleTitle2: 2,
+                    UIFontTextStyleTitle3: 2,
+                    UIFontTextStyleHeadline : 2,
+                    UIFontTextStyleSubheadline : 0,
+                    UIFontTextStyleBody : 2,
+                    UIFontTextStyleCallout : -3,
+                    UIFontTextStyleCaption1 : -3,
+                    UIFontTextStyleCaption2 : -4,
+                    UIFontTextStyleFootnote : -2
+                ],
+
+                UIContentSizeCategoryAccessibilityExtraExtraLarge :
+                [
+                    UIFontTextStyleTitle1: 3,
+                    UIFontTextStyleTitle2: 3,
+                    UIFontTextStyleTitle3: 3,
+                    UIFontTextStyleHeadline : 3,
+                    UIFontTextStyleSubheadline : 1,
+                    UIFontTextStyleBody : 3,
+                    UIFontTextStyleCallout : -2,
+                    UIFontTextStyleCaption1 : -2,
+                    UIFontTextStyleCaption2 : -3,
+                    UIFontTextStyleFootnote : -1
+                ],
+
+                UIContentSizeCategoryAccessibilityExtraExtraExtraLarge :
+                [
+                    UIFontTextStyleTitle1: 4,
+                    UIFontTextStyleTitle2: 4,
+                    UIFontTextStyleTitle3: 4,
+                    UIFontTextStyleHeadline : 4,
+                    UIFontTextStyleSubheadline : 2,
+                    UIFontTextStyleBody : 4,
+                    UIFontTextStyleCallout : -1,
+                    UIFontTextStyleCaption1 : -1,
+                    UIFontTextStyleCaption2 : -2,
+                    UIFontTextStyleFootnote : 0
                 ]
             ]
         }
@@ -139,7 +207,6 @@ extension UIFont {
         
         //choose the font weight
         if textStyle == UIFontTextStyleHeadline || textStyle == UIFontTextStyleSubheadline {
-            
             return UIFont(descriptor: UIFontDescriptor(name: FontNameRegular, size: fontSize), size: 0.0)
         }else {
             return UIFont(descriptor: UIFontDescriptor(name: FontNameMedium, size: fontSize), size: 0.0)
