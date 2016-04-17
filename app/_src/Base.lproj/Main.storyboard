@@ -79,7 +79,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="NCh-iZ-2Br" kind="show" id="7gv-Gd-qYz"/>
+                                            <segue destination="NCh-iZ-2Br" kind="show" identifier="show_rules" id="7gv-Gd-qYz"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>

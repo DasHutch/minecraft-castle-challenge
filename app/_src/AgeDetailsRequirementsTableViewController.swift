@@ -10,7 +10,7 @@ import UIKit
 
 let RequirementCellIdentifier: String = "requirement_cell_identifier"
 
-class AgeDetailsRequirementsTableViewController: UITableViewController {
+class AgeDetailsRequirementsTableViewController: BaseTableViewController {
     
     var selectedCells = [NSIndexPath]()
         
@@ -28,22 +28,10 @@ class AgeDetailsRequirementsTableViewController: UITableViewController {
             configTableViewData()
         }
     }
-    
-    var csdcObserver: NSObjectProtocol?
 
-    // MARK: - Lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
+// MARK: - Lifecycle
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        csdcObserver = NSNotificationCenter.defaultCenter().addObserverForName(UIContentSizeCategoryDidChangeNotification, object: nil, queue: nil) { (notification) -> Void in
-            
-            self.tableView.reloadData()
-        }
-        
         //NOTE: Only get data from plist directly
         //      if it is currently nil here.
         if reqDict == nil {
@@ -52,43 +40,29 @@ class AgeDetailsRequirementsTableViewController: UITableViewController {
         
         configTableView()
     }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        if csdcObserver != nil {
-            NSNotificationCenter.defaultCenter().removeObserver(csdcObserver!)
-        }
+
+    override func contentSizeDidChange(newUIContentSizeCategoryNewValueKey: String) {
+        self.tableView.reloadData()
     }
 
-    override func didMoveToParentViewController(parent: UIViewController?) {}
-
-    // MARK: - Private
+// MARK: - Private
     private func configStageData() {
-        
-        let path = FileManager.defaultManager.challengeProgressPLIST()
-        plistDict = NSMutableDictionary(contentsOfFile: path)
-        if stage != nil && plistDict != nil {
-            
-            let ageLowerCase = stage!.description.lowercaseString
-            let ages = plistDict!["ages"] as? NSMutableDictionary
-            if ages != nil {
-                
-                let age = ages![ageLowerCase]
-                reqDict = age as? NSMutableDictionary
-                
-                log.verbose("Config'd Data for Age from PLIST")
-            }else {
-              log.severe("Stage / Data from saved PLIST is missing `ages` dictionary. Possibly, a corrupt plist file?!")
-            }
-        }else {
-            log.warning("Stage / Data from Saved PLIST is nil, unable to retrieve data.")
+        guard let age = stage?.description.lowercaseString else {
+            log.warning("Stage is not set, unable to configure stage data")
+            return
+        }
+
+        do {
+            reqDict = try CastleChallengeDataManager().dataForAge(age)
+        }catch let error as NSError {
+            log.error("Error: \(error)")
         }
     }
-    
+
     private func configTableView() {
-        
-        tableView.estimatedRowHeight = 44.0//tableView.rowHeight
+        //????: Seems that setting this from the tableView.rowHeight as exists
+        //      in storyboard doesn't actually trigger Autolayout / Self Sizing
+        tableView.estimatedRowHeight = 44.0 //tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
         
         tableView.separatorInset = UIEdgeInsetsZero
@@ -101,42 +75,44 @@ class AgeDetailsRequirementsTableViewController: UITableViewController {
 
 // MARK: - UITableViewDataSource
 extension AgeDetailsRequirementsTableViewController {
-    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        
         var sections = 0
         if requirement != nil {
             sections = 1
+            //TODO: Handle Additional Requirements for Construction
+//            switch requirement! {
+//            case ChallengeStageRequirements.Construction:
+//                sections = 2
+//            default: break
+//            }
         }
         
         //TODO: Add Section for Additional Construction Reqs
-        
         return sections
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         let rows = rowsForCurrentRequirementsType()
         return rows
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         let cell: RequirementTableViewCell = (tableView.dequeueReusableCellWithIdentifier(RequirementCellIdentifier, forIndexPath: indexPath) as? RequirementTableViewCell)!
         
-        let req = requirementForIndexPath(indexPath)
-        cell.loadRequirement(req)
-        
+        //TODO: Refactor to DataManager Class
+        let (req, _) = requirementForIndexPath(indexPath)
+        if req != nil {
+            cell.viewData = RequirementTableViewCell.ViewData(requirement: req!)
+        }
         return cell
     }
     
-    //MARK: Private
+//MARK: Private
+    
+    //TODO: Refactor to DataManager Class
     private func rowsForCurrentRequirementsType() -> Int {
-        
         var rows = 0
-        
         if requirement != nil {
-        
             guard let data = reqDict else {
                 log.error("Stage / Data is nil, possibly not set yet")
                 return rows
@@ -147,99 +123,88 @@ extension AgeDetailsRequirementsTableViewController {
                 return rows
             }
     
-            //TODO: Make Keys constants
             switch(requirement!) {
             case ChallengeStageRequirements.Construction:
-            
                 if let constructionReqs = reqs[CastleChallengeKeys.RequirementsTypeKeys.Construction] as? NSMutableArray {
                     rows = constructionReqs.count
                 }
                 
                 //TODO: Handle Additional Construction Requirements?
-//                if let constructionReqs = reqs[CastleChallengeKeys.RequirementsTypeKeys.ConstructionAdditional] as? NSMutableArray {
-//                    rows = constructionReqs.count
-//                }
+                if let constructionReqs = reqs[CastleChallengeKeys.RequirementsTypeKeys.ConstructionAdditional] as? NSMutableArray {
+                    rows = constructionReqs.count
+                }
                 
             case ChallengeStageRequirements.Materials:
-            
                 if let materialsReqs = reqs[CastleChallengeKeys.RequirementsTypeKeys.Materials] as? NSMutableArray {
                     rows = materialsReqs.count
                 }
             
             case ChallengeStageRequirements.Treasure:
-            
                 if let treasureReqs = reqs[CastleChallengeKeys.RequirementsTypeKeys.Treasure] as? NSMutableArray {
                     rows = treasureReqs.count
                 }
             }
         }
-
         return rows
     }
     
-    private func requirementForIndexPath(indexPath: NSIndexPath) -> NSDictionary {
-        
-        var dict = NSDictionary()
-        
+    private func requirementForIndexPath(indexPath: NSIndexPath) -> (requirement: Requirement?, dictionary: NSMutableDictionary?) {
+        var requirementDictionary =  NSMutableDictionary()
         if requirement != nil {
-            
             guard let data = reqDict else {
                 log.error("Data is missing")
-                return dict
+                return (nil, nil)
             }
             
             guard let reqs = data[CastleChallengeKeys.Requirements] as? NSMutableDictionary else {
                 log.error("Requirment data is nil, possibly not set yet")
-                return dict
+                return (nil, nil)
             }
             
             switch(requirement!) {
             case ChallengeStageRequirements.Construction:
-                
+                //????: Do I need mutable? I dont think so.
                 if let constructionReqs = reqs[CastleChallengeKeys.RequirementsTypeKeys.Construction] as? NSMutableArray {
-                    
-                    //????: Do I have to check for bounds if wrapped with `if let`
-                    if let req = constructionReqs.objectAtIndex(indexPath.row) as? NSMutableDictionary {
-                        dict = req
+                    if let req = constructionReqs.atIndex(indexPath.row) as? NSMutableDictionary {
+                        requirementDictionary = req
                     }
                 }
                 
                 //TODO: Handle Additional Construction Requirements?
-//                if let constructionReqs = reqs[CastleChallengeKeys.RequirementsTypeKeys.Construction] as? NSMutableArray {
-//                    
-//                    //????: Do I have to check for bounds if wrapped with `if let`
-//                    if let req = constructionReqs.objectAtIndex(indexPath.row) as? NSMutableDictionary {
-//                        dict = req
-//                    }
-//                }
+                if let constructionReqs = reqs[CastleChallengeKeys.RequirementsTypeKeys.Construction] as? NSMutableArray {
+                    if let req = constructionReqs.atIndex(indexPath.row) as? NSMutableDictionary {
+                        requirementDictionary = req
+                    }
+                }
                 
             case ChallengeStageRequirements.Materials:
-                
+                //????: Do I need mutable? I dont think so.
                 if let materialsReqs = reqs[CastleChallengeKeys.RequirementsTypeKeys.Materials] as? NSMutableArray {
-                    
-                    //????: Do I have to check for bounds if wrapped with `if let`
-                    if let req = materialsReqs.objectAtIndex(indexPath.row) as? NSMutableDictionary {
-                        dict = req
+                    if let req = materialsReqs.atIndex(indexPath.row) as? NSMutableDictionary {
+                        requirementDictionary = req
                     }
                 }
                 
             case ChallengeStageRequirements.Treasure:
-                
+                //????: Do I need mutable? I dont think so.
                 if let treasureReqs = reqs[CastleChallengeKeys.RequirementsTypeKeys.Treasure] as? NSMutableArray {
-                    
-                    //????: Do I have to check for bounds if wrapped with `if let`
-                    if let req = treasureReqs.objectAtIndex(indexPath.row) as? NSMutableDictionary {
-                        dict = req
+                    if let req = treasureReqs.atIndex(indexPath.row) as? NSMutableDictionary {
+                        requirementDictionary = req
                     }
                 }
             }
         }
         
-        return dict
-    }
-    
-    private func saveRequirementsData() {
+        //TODO: Refactor to DataManager Class
+        let quantity = requirementDictionary[CastleChallengeKeys.StageRequriementItemKeys.Quantity] as? NSNumber ?? 0
+        let item = requirementDictionary[CastleChallengeKeys.StageRequriementItemKeys.Item] as? String ?? ""
+        let completed = requirementDictionary[CastleChallengeKeys.StageRequriementItemKeys.Completed] as? Bool ?? false
         
+        return (requirement: Requirement(description: item, quantity: Int(quantity), completed: completed), dictionary: requirementDictionary)
+    }
+
+    //TODO: Refactor to DataManager Class
+    private func saveRequirementsData() {
         if plistDict != nil {
             FileManager.defaultManager.saveChallengeProgressPLIST(plistDict!)
         }else {
@@ -250,60 +215,31 @@ extension AgeDetailsRequirementsTableViewController {
 
 // MARK: - UITableViewDelegate
 extension AgeDetailsRequirementsTableViewController {
-    
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-        //NOTE: Cell UI updates
-        fixCellSeparatorInsets(cell)
-    }
-    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
         if selectedCells.contains(indexPath) {
-        
+            //TODO: Refactor to DataManager Class
             if plistDict != nil && reqDict != nil && stage != nil && requirement != nil {
-                if let req = requirementForIndexPath(indexPath) as? NSMutableDictionary {
-                    req[CastleChallengeKeys.StageRequriementItemKeys.Completed] = false
+                let (_, dict) = requirementForIndexPath(indexPath)
+                if dict != nil {
+                    dict![CastleChallengeKeys.StageRequriementItemKeys.Completed] = false
                     saveRequirementsData()
-                    
                     if let index = selectedCells.indexOf(indexPath) {
                         selectedCells.removeAtIndex(index)
                     }
                 }
             }
         }else {
-            
+            //TODO: Refactor to DataManager Class
             if plistDict != nil && reqDict != nil && stage != nil && requirement != nil {
-                if let req = requirementForIndexPath(indexPath) as? NSMutableDictionary {
-                    req[CastleChallengeKeys.StageRequriementItemKeys.Completed] = true
+                let (_, dict) = requirementForIndexPath(indexPath)
+                if dict != nil {
+                    dict![CastleChallengeKeys.StageRequriementItemKeys.Completed] = true
                     saveRequirementsData()
-                    
                     selectedCells.append(indexPath)
                 }
             }
         }
-        
         tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    }
-    
-    //MARK: Helpers
-    private func fixCellSeparatorInsets(cell: UITableViewCell) {
-        
-        let separatorInsetSelector = Selector("separatorInset")
-        if cell.respondsToSelector(separatorInsetSelector) {
-            cell.separatorInset = UIEdgeInsetsZero
-        }
-        
-        let preservesSuperviewLayoutMarginsSelector = Selector("preservesSuperviewLayoutMargins")
-        if cell.respondsToSelector(preservesSuperviewLayoutMarginsSelector) {
-            cell.preservesSuperviewLayoutMargins = false
-        }
-        
-        let layoutMarginsSelector = Selector("layoutMargins")
-        if cell.respondsToSelector(layoutMarginsSelector) {
-            cell.layoutMargins = UIEdgeInsetsZero
-        }
     }
 }
