@@ -23,8 +23,5 @@ extension AppDelegate {
     func setupLogging() {
         //TODO: Change Log Level based on Environment (Debug -> Verbose / Release -> Warning)
         log.setup(.Verbose, showLogLevel: true, showFileNames: true, showLineNumbers: true, writeToFile: nil, fileLogLevel: nil)
-        
-        //NOTE: Logs can be sent to a file...
-        //log.setup(.Error, showLogLevel: true, showFileNames: true, showLineNumbers: true, writeToFile: nil, fileLogLevel: nil)
     }
 }

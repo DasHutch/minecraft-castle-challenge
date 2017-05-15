@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kFb-GJ-gwz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Pk2-vB-cai">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -17,10 +17,10 @@
                             <tableViewSection headerTitle="How to Play" id="lGd-bQ-vij" userLabel="Castle Challenge">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZCp-3m-yn4" userLabel="Objective Cell">
-                                        <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="113" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZCp-3m-yn4" id="6Hk-LR-OT6">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grass-block-icon" translatesAutoresizingMaskIntoConstraints="NO" id="TjV-Iv-JMD">
@@ -31,7 +31,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Objective &amp; Plot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHa-lB-gQB">
-                                                    <rect key="frame" x="68" y="8" width="151" height="27.5"/>
+                                                    <rect key="frame" x="68" y="8" width="151" height="27"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -46,14 +46,14 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="0xQ-02-bPC" kind="show" identifier="show_how_to_play" id="aJO-D0-Wu4"/>
+                                            <segue destination="jtT-5t-ykl" kind="showDetail" identifier="show_how_to_play" id="hz1-wD-9XV"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jwB-sx-eXc" userLabel="Rules Cell">
-                                        <rect key="frame" x="0.0" y="157.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="157" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jwB-sx-eXc" id="07F-t3-2AJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swords-icon" translatesAutoresizingMaskIntoConstraints="NO" id="skQ-I6-LD5">
@@ -64,7 +64,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rules" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLZ-rX-Jqn">
-                                                    <rect key="frame" x="68" y="8" width="51.5" height="27.5"/>
+                                                    <rect key="frame" x="68" y="8" width="51" height="27"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -79,7 +79,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="NCh-iZ-2Br" kind="show" identifier="show_rules" id="7gv-Gd-qYz"/>
+                                            <segue destination="jtT-5t-ykl" kind="showDetail" identifier="show_rules" id="m1s-LR-tQ2"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -87,10 +87,10 @@
                             <tableViewSection headerTitle="Ages" id="voR-te-lGY">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="AP4-7q-1zg" userLabel="Wooden Age Cell">
-                                        <rect key="frame" x="0.0" y="251.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="251" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AP4-7q-1zg" id="kKK-dZ-OB6">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wood-block-icon" translatesAutoresizingMaskIntoConstraints="NO" id="8qR-Up-hvx">
@@ -101,7 +101,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wooden" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTd-Kh-qWn">
-                                                    <rect key="frame" x="68" y="8" width="78.5" height="27.5"/>
+                                                    <rect key="frame" x="68" y="8" width="78" height="27"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -117,10 +117,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="r6R-Rn-rna" userLabel="Stone Age Cell">
-                                        <rect key="frame" x="0.0" y="295.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="295" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r6R-Rn-rna" id="rHZ-aN-WGU">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stone-block-icon" translatesAutoresizingMaskIntoConstraints="NO" id="UKB-TT-TPa">
@@ -131,7 +131,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhS-0M-EUo">
-                                                    <rect key="frame" x="68" y="8" width="54.5" height="27.5"/>
+                                                    <rect key="frame" x="68" y="8" width="54" height="27"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -147,10 +147,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="pGP-OF-hhc" userLabel="Iron Age Cell">
-                                        <rect key="frame" x="0.0" y="339.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="339" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pGP-OF-hhc" id="4nN-PB-kPv">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iron-block-icon" translatesAutoresizingMaskIntoConstraints="NO" id="i36-PA-Ofq">
@@ -161,7 +161,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Iron" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heT-Hd-Elv">
-                                                    <rect key="frame" x="68" y="8" width="35.5" height="27.5"/>
+                                                    <rect key="frame" x="68" y="8" width="35" height="27"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -177,10 +177,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="yGx-cV-2Ye" userLabel="Gold Age Cell">
-                                        <rect key="frame" x="0.0" y="383.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="383" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yGx-cV-2Ye" id="gkS-GF-NUo">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gold-block-icon" translatesAutoresizingMaskIntoConstraints="NO" id="xZF-t7-eV8">
@@ -191,7 +191,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gold" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYQ-qy-JVM">
-                                                    <rect key="frame" x="68" y="8" width="44.5" height="27.5"/>
+                                                    <rect key="frame" x="68" y="8" width="44" height="27"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -207,10 +207,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="meE-0z-nbt" userLabel="Diamond Age Cell">
-                                        <rect key="frame" x="0.0" y="427.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="427" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="meE-0z-nbt" id="xgb-1Q-HT5">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="diamond-block-icon" translatesAutoresizingMaskIntoConstraints="NO" id="nYf-97-xvx">
@@ -221,7 +221,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diamond" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCm-4j-YHl">
-                                                    <rect key="frame" x="68" y="8" width="85" height="27.5"/>
+                                                    <rect key="frame" x="68" y="8" width="85" height="27"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -247,7 +247,7 @@
                     <navigationItem key="navigationItem" id="NN0-mp-abH">
                         <nil key="title"/>
                         <view key="titleView" contentMode="scaleToFill" id="13b-0f-DRP">
-                            <rect key="frame" x="180" y="5.5" width="240" height="33"/>
+                            <rect key="frame" x="180" y="5" width="240" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mccc-logo" translatesAutoresizingMaskIntoConstraints="NO" id="7YM-Bl-iND">
@@ -270,12 +270,48 @@
                         <outlet property="rulesStaticCellLabel" destination="RLZ-rX-Jqn" id="V9j-p2-Uaf"/>
                         <outlet property="stoneAgeStaticCellLabel" destination="nhS-0M-EUo" id="Hqe-mI-ke7"/>
                         <outlet property="woodenAgeStaticCellLabel" destination="MTd-Kh-qWn" id="TTV-JR-bAj"/>
-                        <segue destination="Xhh-uy-4ke" kind="show" identifier="show_age" id="5WX-lk-F8J"/>
+                        <segue destination="jtT-5t-ykl" kind="showDetail" identifier="show_age" id="hih-Yf-2wm"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xGn-KZ-5hF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1213" y="-198"/>
+        </scene>
+        <!--Detail View Manager View Controller-->
+        <scene sceneID="cO3-2C-KWi">
+            <objects>
+                <viewController id="jtT-5t-ykl" customClass="DetailViewManagerViewController" customModule="MC_CC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rxc-xz-maV"/>
+                        <viewControllerLayoutGuide type="bottom" id="c8d-7m-w5p"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HE5-J2-Stl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="Xhh-uy-4ke" kind="show" identifier="show_age_detail" id="EQm-x4-tNa"/>
+                        <segue destination="NCh-iZ-2Br" kind="show" identifier="show_rules_detail" action="showDetailViewController:sender:" id="LQf-EA-zj3"/>
+                        <segue destination="0xQ-02-bPC" kind="show" identifier="show_objectives_detail" action="showDetailViewController:sender:" id="AA3-14-Ya6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EYd-7p-ofw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1213" y="553"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="kPk-5J-9Qb">
+            <objects>
+                <splitViewController id="Pk2-vB-cai" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="jtT-5t-ykl" kind="relationship" relationship="detailViewController" id="4BW-d0-soK"/>
+                        <segue destination="kFb-GJ-gwz" kind="relationship" relationship="masterViewController" id="mW7-vx-7uG"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Il4-fl-WGH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-168" y="133"/>
         </scene>
         <!--Rules & Stages NVC-->
         <scene sceneID="ihh-ma-xDb">
@@ -294,29 +330,29 @@
             </objects>
             <point key="canvasLocation" x="554" y="-198"/>
         </scene>
-        <!--HowToPlay-->
+        <!--How To Play Ref-->
         <scene sceneID="daZ-Ty-0t6">
             <objects>
-                <viewControllerPlaceholder storyboardName="HowToPlay" id="0xQ-02-bPC" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="HowToPlay" id="0xQ-02-bPC" userLabel="How To Play Ref" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w91-g1-GgL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1678" y="-270"/>
+            <point key="canvasLocation" x="1669" y="620"/>
         </scene>
-        <!--Rules-->
+        <!--Rules Ref-->
         <scene sceneID="Fxn-9H-1ao">
             <objects>
-                <viewControllerPlaceholder storyboardName="Rules" id="NCh-iZ-2Br" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Rules" id="NCh-iZ-2Br" userLabel="Rules Ref" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JQH-0c-4SY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1661.5" y="-198"/>
+            <point key="canvasLocation" x="1649" y="479"/>
         </scene>
-        <!--Age-->
+        <!--Age Ref-->
         <scene sceneID="aMV-P0-mUZ">
             <objects>
-                <viewControllerPlaceholder storyboardName="Age" id="Xhh-uy-4ke" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Age" id="Xhh-uy-4ke" userLabel="Age Ref" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qow-UY-UmA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1656" y="-125"/>
+            <point key="canvasLocation" x="1644" y="553"/>
         </scene>
     </scenes>
     <resources>
@@ -329,4 +365,7 @@
         <image name="swords-icon" width="150" height="150"/>
         <image name="wood-block-icon" width="150" height="150"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="m1s-LR-tQ2"/>
+    </inferredMetricsTieBreakers>
 </document>

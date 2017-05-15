@@ -44,17 +44,34 @@ class ChallengeRulesAndStages: BaseTableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     
         if segue.identifier == SegueIdentifiers.showAge {
-            if let vc = segue.destinationViewController.contentViewController as? AgeDetailsViewController {
-                
-                vc.stage = selectedStage
+            if let vc = segue.destinationViewController.contentViewController as? DetailViewManagerViewController {
+                guard let stage = selectedStage else {
+                    log.warning("Attempting to prepare \(SegueIdentifiers.showAge) segue but no age was selected")
+                    return
+                }
+
+                vc.detailView = DetailViewManagerViewController.DetailViewType.age(stage: stage)
                 
             }else {
                 log.warning("Attempting to prepare \(SegueIdentifiers.showAge) segue but found an unexpected ViewController: \(segue.destinationViewController)")
             }
         }else if segue.identifier == SegueIdentifiers.showObjective {
-            log.verbose("TODO: Implement Show How to Play")
+            if let vc = segue.destinationViewController.contentViewController as? DetailViewManagerViewController {
+
+                vc.detailView = DetailViewManagerViewController.DetailViewType.objectives
+
+            }else {
+                log.warning("Attempting to prepare \(SegueIdentifiers.showObjective) segue but found an unexpected ViewController: \(segue.destinationViewController)")
+            }
         }else if segue.identifier == SegueIdentifiers.showRules {
-            //NOTE: No nothing is needed, RulesViewController handles its self...
+            print("kdsajgkl;dsahgasdklghsadl;kgjdsakl;")
+            if let vc = segue.destinationViewController.contentViewController as? DetailViewManagerViewController {
+
+                vc.detailView = DetailViewManagerViewController.DetailViewType.rules
+
+            }else {
+                log.warning("Attempting to prepare \(SegueIdentifiers.showRules) segue but found an unexpected ViewController: \(segue.destinationViewController)")
+            }
         }else {
             log.warning("Attempting to prepare for an unknown segue identifier: \(segue.identifier)")
         }

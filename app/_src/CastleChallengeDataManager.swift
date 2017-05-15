@@ -14,22 +14,77 @@ import Foundation
 class CastleChallengeDataManager {
     lazy var _rules = [Rule]()
 
+    struct Errors {
+        enum FileSystem {
+            case missing(file: String?)
+
+            var domain: String {
+                return "com.minecraft.castle.challenge.errors.filesystem"
+            }
+
+            var code: Int {
+                switch self {
+                case missing(_):
+                    return 1000
+                }
+            }
+
+            var detail: String {
+                switch self {
+                case missing(let file):
+                    return "file is missing: \(file)"
+                }
+            }
+
+            var error: NSError {
+                return NSError(domain: domain, code: code, userInfo: [NSLocalizedDescriptionKey: detail])
+            }
+        }
+
+        enum Parsing {
+            case missingKey(key: String?)
+
+            var domain: String {
+                return "com.minecraft.castle.challenge.errors.parsing"
+            }
+
+            var code: Int {
+                switch self {
+                case missingKey(_):
+                    return 1000
+                }
+            }
+
+            var detail: String {
+                switch self {
+                case missingKey(let key):
+                    return "missing key in dict: \(key)"
+                }
+            }
+
+            var error: NSError {
+                return NSError(domain: domain, code: code, userInfo: [NSLocalizedDescriptionKey: detail])
+            }
+        }
+    }
+
     func dataForAge(age: String) throws -> NSMutableDictionary {
+
         let path = FileManager.defaultManager.challengeProgressPLIST()
         let plistDict = NSMutableDictionary(contentsOfFile: path)
         guard plistDict != nil else {
             log.severe("Stage / Data from Saved PLIST is nil, unable to retrieve data.")
-            throw NSError(domain: "com.minecraft.castle.challenge.errors.filesystem", code: 1000, userInfo: [NSLocalizedDescriptionKey: "file is missing"])
+            throw Errors.FileSystem.missing(file: path).error
         }
 
         guard let ages = plistDict!["ages"] as? NSMutableDictionary else {
             log.severe("Stage / Data from saved PLIST is missing `ages` dictionary. Possibly, a corrupt plist file?!")
-            throw NSError(domain: "com.minecraft.castle.challenge.errors.plist.parsing", code: 1000, userInfo: [NSLocalizedDescriptionKey: "missing key in plist"])
+            throw Errors.Parsing.missingKey(key: "ages").error
         }
 
         let ageLowerCase = age.lowercaseString
         guard let age = ages[ageLowerCase] as? NSMutableDictionary else {
-            throw NSError(domain: "com.minecraft.castle.challenge.errors.plist.parsing", code: 1000, userInfo: [NSLocalizedDescriptionKey: "missing key in plist"])
+            throw Errors.Parsing.missingKey(key: ageLowerCase).error
         }
 
         log.verbose("Config'd Data for Age: \(age) from PLIST")
@@ -41,12 +96,12 @@ class CastleChallengeDataManager {
         let plistDict = NSMutableDictionary(contentsOfFile: path)
         guard plistDict != nil else {
             log.severe("Stage / Data from Saved PLIST is nil, unable to retrieve data.")
-            throw NSError(domain: "com.minecraft.castle.challenge.errors.filesystem", code: 1000, userInfo: [NSLocalizedDescriptionKey: "file is missing"])
+            throw Errors.FileSystem.missing(file: path).error
         }
 
         guard let rules = plistDict!["rules"] as? NSArray else {
             log.severe("Stage / Data from saved PLIST is missing `rules` dictionary. Possibly, a corrupt plist file?!")
-            throw NSError(domain: "com.minecraft.castle.challenge.errors.plist.parsing", code: 1000, userInfo: [NSLocalizedDescriptionKey: "missing key in plist"])
+            throw Errors.Parsing.missingKey(key: "rules").error
         }
 
         return rules

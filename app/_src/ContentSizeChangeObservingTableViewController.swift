@@ -35,14 +35,14 @@ class ContentSizeChangeObservingTableViewController: UITableViewController {
 //MARK: Private
     private func registerNotifications() {
         let notifCenter = NSNotificationCenter.defaultCenter()
-        csdcObserver = notifCenter.addObserverForName(UIContentSizeCategoryDidChangeNotification, object: nil, queue: nil) { (notification) -> Void in
+        csdcObserver = notifCenter.addObserverForName(UIContentSizeCategoryDidChangeNotification, object: nil, queue: nil) { [weak weakSelf = self] (notification) -> Void in
 
             if let newContentSizeCategory = notification.userInfo?[UIContentSizeCategoryNewValueKey]
                 as? String {
-                self.contentSizeDidChange(newContentSizeCategory)
+                weakSelf?.contentSizeDidChange(newContentSizeCategory)
             }else {
                 log.warning("New UIContentSizeCategoryNewValueKey is missing")
-                self.contentSizeDidChange(String.empty)
+                weakSelf?.contentSizeDidChange(String.empty)
             }
         }
     }
